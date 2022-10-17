@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://k71ge76ke5uq"]
+
+[ext_resource type="PackedScene" uid="uid://ciwh63g14hhqx" path="res://game/squre/square.tscn" id="1_nytc7"]
+
+[node name="Game" type="Node2D"]
+
+[node name="square" parent="." instance=ExtResource("1_nytc7")]
+position = Vector2(322, 157)
+
+[node name="square2" parent="." instance=ExtResource("1_nytc7")]
+position = Vector2(134, 129)
+
+[node name="square3" parent="." instance=ExtResource("1_nytc7")]
+position = Vector2(583, 111)
+
+[node name="square4" parent="." instance=ExtResource("1_nytc7")]
+position = Vector2(457, 239)

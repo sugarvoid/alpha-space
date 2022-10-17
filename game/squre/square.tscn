@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciwh63g14hhqx"]
+
+[ext_resource type="Script" path="res://game/squre/square.gd" id="1_yse13"]
+[ext_resource type="Texture2D" uid="uid://vxafhpdipfa7" path="res://game/squre/TEMP_square.png" id="2_n7xnj"]
+
+[sub_resource type="Animation" id="Animation_kx3yd"]
+resource_name = "flip_over"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7cwp"]
+_data = {
+"flip_over": SubResource("Animation_kx3yd")
+}
+
+[node name="square" type="Node2D"]
+script = ExtResource("1_yse13")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n7xnj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c7cwp")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
