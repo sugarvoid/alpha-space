@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b43yhcx7q06cy"]
+
+[ext_resource type="Script" path="res://FPS_counter.gd" id="1_tfnbc"]
+
+[node name="FPSCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_tfnbc")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "60"

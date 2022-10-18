@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://k71ge76ke5uq"]
+[gd_scene load_steps=6 format=3 uid="uid://k71ge76ke5uq"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_746y8"]
 [ext_resource type="PackedScene" uid="uid://ciwh63g14hhqx" path="res://game/squre/square.tscn" id="1_nytc7"]
 [ext_resource type="PackedScene" uid="uid://bxpual75u03g5" path="res://numpad_layout.tscn" id="1_w1wc2"]
+[ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://star_field.tscn" id="4_710qh"]
+[ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://fps_counter.tscn" id="5_ke8lb"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_746y8")
+
+[node name="StarField" parent="." instance=ExtResource("4_710qh")]
+position = Vector2(301, 303)
+scale = Vector2(3, 3)
 
 [node name="NumpadLayout" parent="." instance=ExtResource("1_w1wc2")]
 
@@ -20,3 +26,13 @@ position = Vector2(334, 86)
 
 [node name="square4" parent="." instance=ExtResource("1_nytc7")]
 position = Vector2(252, 81)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("5_ke8lb")]
+offset_left = 519.0
+offset_top = 16.0
+offset_right = -19.0
+offset_bottom = -530.0
+grow_horizontal = 2
+grow_vertical = 2
