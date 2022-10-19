@@ -1,31 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://k71ge76ke5uq"]
+[gd_scene load_steps=8 format=3 uid="uid://wuuxtt2qq6fi"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_746y8"]
-[ext_resource type="PackedScene" uid="uid://ciwh63g14hhqx" path="res://game/squre/square.tscn" id="1_nytc7"]
-[ext_resource type="PackedScene" uid="uid://bxpual75u03g5" path="res://numpad_layout.tscn" id="1_w1wc2"]
+[ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://space_back_ground.tscn" id="2_1vn7g"]
+[ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://cork_pit.tscn" id="3_bgtmt"]
 [ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://star_field.tscn" id="4_710qh"]
 [ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://fps_counter.tscn" id="5_ke8lb"]
+[ext_resource type="PackedScene" uid="uid://bxpual75u03g5" path="res://ennead.tscn" id="6_8i3gv"]
+[ext_resource type="PackedScene" uid="uid://c7i2xu7w4hbkw" path="res://hand.tscn" id="8_mtyrn"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_746y8")
+
+[node name="SpaceBackGround" parent="." instance=ExtResource("2_1vn7g")]
 
 [node name="StarField" parent="." instance=ExtResource("4_710qh")]
 position = Vector2(301, 303)
 scale = Vector2(3, 3)
 
-[node name="NumpadLayout" parent="." instance=ExtResource("1_w1wc2")]
-
-[node name="square" parent="." instance=ExtResource("1_nytc7")]
-position = Vector2(170, 84)
-
-[node name="square2" parent="." instance=ExtResource("1_nytc7")]
-position = Vector2(85, 84)
-
-[node name="square3" parent="." instance=ExtResource("1_nytc7")]
-position = Vector2(334, 86)
-
-[node name="square4" parent="." instance=ExtResource("1_nytc7")]
-position = Vector2(252, 81)
+[node name="CorkPit" parent="." instance=ExtResource("3_bgtmt")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -34,5 +26,8 @@ offset_left = 519.0
 offset_top = 16.0
 offset_right = -19.0
 offset_bottom = -530.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[node name="NumpadLayout" parent="." instance=ExtResource("6_8i3gv")]
+
+[node name="Hand" parent="." instance=ExtResource("8_mtyrn")]
+position = Vector2(347, 541)

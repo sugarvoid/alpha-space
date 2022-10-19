@@ -1,21 +1,30 @@
 [gd_scene format=3 uid="uid://bxpual75u03g5"]
 
-[node name="NumpadLayout" type="Node2D"]
+[node name="Ennead" type="Node2D"]
 
 [node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(10, 10)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(20, 10)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(30, 10)
 
 [node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(10, 20)
 
 [node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(20, 20)
 
 [node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(30, 20)
 
 [node name="Marker2D7" type="Marker2D" parent="."]
+position = Vector2(10, 30)
 
 [node name="Marker2D8" type="Marker2D" parent="."]
+position = Vector2(20, 30)
 
 [node name="Marker2D9" type="Marker2D" parent="."]
+position = Vector2(30, 30)

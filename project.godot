@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node2D",
+"class": &"Square",
+"language": &"GDScript",
+"path": "res://game/squre/square.gd"
+}]
+_global_script_class_icons={
+"Square": ""
+}
+
 [application]
 
 config/name="NumPad"
