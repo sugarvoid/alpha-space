@@ -10,9 +10,3 @@ position = Vector2(84, 418)
 
 [node name="Right" type="Marker2D" parent="."]
 position = Vector2(509, 433)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

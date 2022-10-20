@@ -24,5 +24,3 @@ func add_lasers_to_screen(target: Vector2) -> void:
 
 
 
-func _on_timer_timeout() -> void:
-	add_lasers_to_screen(Vector2(370, 180))

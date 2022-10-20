@@ -5,6 +5,7 @@ extends Node2D
 @onready var outer_node: Node2D = get_node("Outer")
 
 const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
+const p_Explosion: PackedScene = preload("res://game/meteor/particle_explosion.tscn")
 
 var current_meteors: Array
 
@@ -15,7 +16,9 @@ func add_meteor_to_screen(slot: int) -> void:
 	var meteor: Meteor = p_Meteor.instantiate()
 	meteor.start_pos = self.inner_positions[slot]
 	meteor.end_pos = self.outer_positions[slot]
-	self._add_meteor_to_child(slot, meteor)
+	###self._add_meteor_to_child(slot, meteor)
+	self.add_child(meteor)
+	self.current_meteors[slot] = meteor
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,8 +43,22 @@ func _process(delta: float) -> void:
 	pass
 
 func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
-	self.inner_node.get_child(child_num).add_child(meteor)
+	self.add_child(meteor)
 	self.current_meteors[child_num] = meteor
+
+func remove_meteor(meteor: Meteor) -> void:
+	print(meteor)
+	var explosion = p_Explosion.instantiate()
+	explosion.position = meteor.global_position
+	# self.current_meteors[meteor.get_index()] = null
+	meteor.queue_free()
+	
+	self.add_child(explosion)
+	
+
+func check_if_slot_has_meteor(slot: int) -> bool:
+	print(current_meteors)
+	return is_instance_valid(current_meteors[slot])## current_meteors[slot] != null
 
 func _resize_arrays() -> void:
 	self.current_meteors.resize(9)
@@ -59,3 +76,4 @@ func _add_pos_to_outer_array() -> void:
 	for pos in self.outer_node.get_children():
 		self.outer_positions[i] = pos.global_position
 		i += 1
+

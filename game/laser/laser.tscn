@@ -4,7 +4,8 @@
 
 [sub_resource type="Animation" id="Animation_rhkmv"]
 resource_name = "flash"
-length = 0.3
+length = 0.14
+step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -12,10 +13,10 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.06, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1a7du"]
@@ -24,6 +25,7 @@ _data = {
 }
 
 [node name="Laser" type="Node2D"]
+visible = false
 script = ExtResource("1_oaoc3")
 
 [node name="Line2D" type="Line2D" parent="."]

@@ -1,36 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkeb6tw0exne0"]
+[gd_scene load_steps=3 format=3 uid="uid://dkeb6tw0exne0"]
 
 [ext_resource type="Script" path="res://game/meteor/meteor.gd" id="1_akqqa"]
 [ext_resource type="Texture2D" uid="uid://bstauo7ogwrkh" path="res://game/meteor/meteor.png" id="2_gy8v2"]
-
-[sub_resource type="Animation" id="Animation_kx3yd"]
-resource_name = "flip_over"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7cwp"]
-_data = {
-"flip_over": SubResource("Animation_kx3yd")
-}
 
 [node name="meteor" type="Node2D"]
 script = ExtResource("1_akqqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.2)
 texture = ExtResource("2_gy8v2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_c7cwp")
-}
+[node name="Control" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Control"]
+offset_left = -21.0
+offset_top = -18.0
+offset_right = 21.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 24
+text = "000"
