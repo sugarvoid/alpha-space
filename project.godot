@@ -10,12 +10,18 @@ config_version=5
 
 _global_script_classes=[{
 "base": "Node2D",
-"class": &"Square",
+"class": &"Meteor",
 "language": &"GDScript",
-"path": "res://game/squre/square.gd"
+"path": "res://game/meteor/meteor.gd"
+}, {
+"base": "Node2D",
+"class": &"MeteorManager",
+"language": &"GDScript",
+"path": "res://game/manager/meteor_manager.gd"
 }]
 _global_script_class_icons={
-"Square": ""
+"Meteor": "",
+"MeteorManager": ""
 }
 
 [application]

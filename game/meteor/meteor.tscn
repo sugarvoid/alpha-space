@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciwh63g14hhqx"]
+[gd_scene load_steps=5 format=3 uid="uid://dkeb6tw0exne0"]
 
-[ext_resource type="Script" path="res://game/squre/square.gd" id="1_yse13"]
-[ext_resource type="Texture2D" uid="uid://vxafhpdipfa7" path="res://game/squre/TEMP_square.png" id="2_n7xnj"]
+[ext_resource type="Script" path="res://game/meteor/meteor.gd" id="1_akqqa"]
+[ext_resource type="Texture2D" uid="uid://vxafhpdipfa7" path="res://game/meteor/TEMP_square.png" id="2_tqqdy"]
 
 [sub_resource type="Animation" id="Animation_kx3yd"]
 resource_name = "flip_over"
@@ -24,11 +24,11 @@ _data = {
 "flip_over": SubResource("Animation_kx3yd")
 }
 
-[node name="square" type="Node2D"]
-script = ExtResource("1_yse13")
+[node name="meteor" type="Node2D"]
+script = ExtResource("1_akqqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_n7xnj")
+texture = ExtResource("2_tqqdy")
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

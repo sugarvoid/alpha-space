@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://chwyx6msikv4k"]
-
-[ext_resource type="Texture2D" uid="uid://68hr307lbk33" path="res://TEMP_space_background.png" id="1_bdm8h"]
-
-[node name="SpaceBackGround" type="Sprite2D"]
-texture = ExtResource("1_bdm8h")
-centered = false

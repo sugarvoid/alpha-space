@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://68hr307lbk33"
-path="res://.godot/imported/TEMP_space_background.png-0c4c5651e0abd1f3a968cc98ec215301.ctex"
+uid="uid://vxafhpdipfa7"
+path="res://.godot/imported/TEMP_square.png-80d13d6ebd62f5cbde0a039c882b677f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEMP_space_background.png"
-dest_files=["res://.godot/imported/TEMP_space_background.png-0c4c5651e0abd1f3a968cc98ec215301.ctex"]
+source_file="res://game/meteor/TEMP_square.png"
+dest_files=["res://.godot/imported/TEMP_square.png-80d13d6ebd62f5cbde0a039c882b677f.ctex"]
 
 [params]
 

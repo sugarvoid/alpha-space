@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mn0j3wbffi0e"
-path="res://.godot/imported/TEMP_laser.png-639169dbc5bdc92ae4d62500db516eb8.ctex"
+uid="uid://68hr307lbk33"
+path="res://.godot/imported/TEMP_space_background.png-fc6ce1c8fcef2a656d59f628add2dc41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEMP_laser.png"
-dest_files=["res://.godot/imported/TEMP_laser.png-639169dbc5bdc92ae4d62500db516eb8.ctex"]
+source_file="res://game/TEMP_space_background.png"
+dest_files=["res://.godot/imported/TEMP_space_background.png-fc6ce1c8fcef2a656d59f628add2dc41.ctex"]
 
 [params]
 

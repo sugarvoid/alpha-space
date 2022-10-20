@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://v2iwiqck83oo"]
+
+[ext_resource type="Texture2D" uid="uid://ctecqw0h2d7l7" path="res://game/corkpit/corkpit.png" id="1_5w8er"]
+
+[node name="CorkPit" type="Sprite2D"]
+texture = ExtResource("1_5w8er")
+centered = false

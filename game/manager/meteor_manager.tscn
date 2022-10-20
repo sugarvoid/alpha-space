@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://brpmynuyrhbkj"]
+
+[ext_resource type="Script" path="res://game/manager/meteor_manager.gd" id="1_v866o"]
+
+[node name="MeteorManager" type="Node2D"]
+script = ExtResource("1_v866o")
+
+[node name="Inner" type="Node2D" parent="."]
+
+[node name="0" type="Marker2D" parent="Inner"]
+position = Vector2(291, 234)
+
+[node name="1" type="Marker2D" parent="Inner"]
+position = Vector2(301, 234)
+
+[node name="2" type="Marker2D" parent="Inner"]
+position = Vector2(311, 234)
+
+[node name="3" type="Marker2D" parent="Inner"]
+position = Vector2(291, 244)
+
+[node name="4" type="Marker2D" parent="Inner"]
+position = Vector2(301, 244)
+
+[node name="5" type="Marker2D" parent="Inner"]
+position = Vector2(311, 244)
+
+[node name="6" type="Marker2D" parent="Inner"]
+position = Vector2(291, 254)
+
+[node name="7" type="Marker2D" parent="Inner"]
+position = Vector2(301, 254)
+
+[node name="8" type="Marker2D" parent="Inner"]
+position = Vector2(311, 254)
+
+[node name="Outer" type="Node2D" parent="."]
+
+[node name="0" type="Marker2D" parent="Outer"]
+position = Vector2(229, 179)
+
+[node name="1" type="Marker2D" parent="Outer"]
+position = Vector2(300, 180)
+
+[node name="2" type="Marker2D" parent="Outer"]
+position = Vector2(365, 181)
+
+[node name="3" type="Marker2D" parent="Outer"]
+position = Vector2(230, 245)
+
+[node name="4" type="Marker2D" parent="Outer"]
+position = Vector2(301, 244)
+
+[node name="5" type="Marker2D" parent="Outer"]
+position = Vector2(365, 246)
+
+[node name="6" type="Marker2D" parent="Outer"]
+position = Vector2(232, 317)
+
+[node name="7" type="Marker2D" parent="Outer"]
+position = Vector2(303, 318)
+
+[node name="8" type="Marker2D" parent="Outer"]
+position = Vector2(367, 318)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctecqw0h2d7l7"
-path="res://.godot/imported/corkpit.png-cd010fec0d0393bacf8c3e3379454f9f.ctex"
+path="res://.godot/imported/corkpit.png-84f1fd74f9522b11ce9062031480c3ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://corkpit.png"
-dest_files=["res://.godot/imported/corkpit.png-cd010fec0d0393bacf8c3e3379454f9f.ctex"]
+source_file="res://game/corkpit/corkpit.png"
+dest_files=["res://.godot/imported/corkpit.png-84f1fd74f9522b11ce9062031480c3ae.ctex"]
 
 [params]
 

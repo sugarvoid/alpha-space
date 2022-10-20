@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://cexyc6fl3tx2e"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_8vr4e"]
+[ext_resource type="PackedScene" uid="uid://c7i2xu7w4hbkw" path="res://game/hand/hand.tscn" id="2_ni3ut"]
+[ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="3_hqsl1"]
+[ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://game/star_field/star_field.tscn" id="4_onjy1"]
+[ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="5_cw3rp"]
+[ext_resource type="PackedScene" uid="uid://brpmynuyrhbkj" path="res://game/manager/meteor_manager.tscn" id="6_guurn"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8vr4e")
+
+[node name="SpaceBackGround" parent="." instance=ExtResource("5_cw3rp")]
+position = Vector2(301, 297)
+
+[node name="CorkPit" parent="." instance=ExtResource("3_hqsl1")]
+
+[node name="StarField" parent="." instance=ExtResource("4_onjy1")]
+position = Vector2(290, 227)
+
+[node name="Hand" parent="." instance=ExtResource("2_ni3ut")]
+position = Vector2(345, 562)
+
+[node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]

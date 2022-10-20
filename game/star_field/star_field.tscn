@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1ajj7sdaryad"]
 
-[ext_resource type="Script" path="res://star_field.gd" id="1_ja7x0"]
+[ext_resource type="Script" path="res://game/star_field/star_field.gd" id="1_fbwtk"]
 
 [sub_resource type="Gradient" id="Gradient_8ii1v"]
 offsets = PackedFloat32Array(0.402332, 0.658892)
@@ -23,4 +23,4 @@ amount = 100
 lifetime = 1.4
 preprocess = 3.0
 process_material = SubResource("ParticleProcessMaterial_4xhpi")
-script = ExtResource("1_ja7x0")
+script = ExtResource("1_fbwtk")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7i2xu7w4hbkw"]
+
+[ext_resource type="Texture2D" uid="uid://be52mbkqfrr30" path="res://game/hand/hand.png" id="1_p8nfy"]
+
+[node name="Hand" type="Sprite2D"]
+position = Vector2(-5.21541e-08, 7)
+texture = ExtResource("1_p8nfy")

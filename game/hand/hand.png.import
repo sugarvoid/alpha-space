@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vxafhpdipfa7"
-path="res://.godot/imported/TEMP_square.png-3db281a3fedda024ec6361b3c24b91d2.ctex"
+uid="uid://be52mbkqfrr30"
+path="res://.godot/imported/hand.png-0713c01ab7486d0e61d2b0e922655a9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/squre/TEMP_square.png"
-dest_files=["res://.godot/imported/TEMP_square.png-3db281a3fedda024ec6361b3c24b91d2.ctex"]
+source_file="res://game/hand/hand.png"
+dest_files=["res://.godot/imported/hand.png-0713c01ab7486d0e61d2b0e922655a9d.ctex"]
 
 [params]
 
