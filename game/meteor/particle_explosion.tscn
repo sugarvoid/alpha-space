@@ -40,7 +40,6 @@ scale_curve = SubResource("CurveTexture_jlpms")
 amount = 30
 lifetime = 0.8
 explosiveness = 1.0
-randomness = 0.07
 process_material = SubResource("ParticleProcessMaterial_nwgnx")
 script = ExtResource("1_uxeni")
 

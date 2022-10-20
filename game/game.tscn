@@ -30,7 +30,6 @@ scale = Vector2(2, 2)
 position = Vector2(345, 562)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("7_ufc36")]
 
