@@ -48,12 +48,11 @@ func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
 
 func remove_meteor(meteor: Meteor) -> void:
 	print(meteor)
-	var explosion = p_Explosion.instantiate()
-	explosion.position = meteor.global_position
-	# self.current_meteors[meteor.get_index()] = null
+	#var explosion = p_Explosion.instantiate()
+	#explosion.position = meteor.global_position
 	meteor.queue_free()
 	
-	self.add_child(explosion)
+	#self.add_child(explosion)
 	
 
 func check_if_slot_has_meteor(slot: int) -> bool:

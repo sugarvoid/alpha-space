@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://807lqkfqu545"
+path="res://.godot/imported/Neon Night - Free CCA Synthwave Music For Games.ogg-ffaf4b281a7e3e9cfb2b3e847004b943.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/music/Neon Night - Free CCA Synthwave Music For Games.ogg"
+dest_files=["res://.godot/imported/Neon Night - Free CCA Synthwave Music For Games.ogg-ffaf4b281a7e3e9cfb2b3e847004b943.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
