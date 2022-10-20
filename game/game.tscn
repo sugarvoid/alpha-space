@@ -17,7 +17,7 @@ position = Vector2(301, 297)
 [node name="CorkPit" parent="." instance=ExtResource("3_hqsl1")]
 
 [node name="StarField" parent="." instance=ExtResource("4_onjy1")]
-position = Vector2(290, 227)
+position = Vector2(301, 245)
 
 [node name="Hand" parent="." instance=ExtResource("2_ni3ut")]
 position = Vector2(345, 562)
@@ -25,5 +25,6 @@ position = Vector2(345, 562)
 [node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("7_ufc36")]

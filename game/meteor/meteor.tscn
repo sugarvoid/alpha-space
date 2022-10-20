@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkeb6tw0exne0"]
 
 [ext_resource type="Script" path="res://game/meteor/meteor.gd" id="1_akqqa"]
-[ext_resource type="Texture2D" uid="uid://vxafhpdipfa7" path="res://game/meteor/TEMP_square.png" id="2_tqqdy"]
+[ext_resource type="Texture2D" uid="uid://bstauo7ogwrkh" path="res://game/meteor/meteor.png" id="2_gy8v2"]
 
 [sub_resource type="Animation" id="Animation_kx3yd"]
 resource_name = "flip_over"
@@ -28,16 +28,9 @@ _data = {
 script = ExtResource("1_akqqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tqqdy")
-hframes = 2
+texture = ExtResource("2_gy8v2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_c7cwp")
 }
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

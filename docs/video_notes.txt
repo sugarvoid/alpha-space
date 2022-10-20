@@ -1,0 +1,7 @@
+Changes:
+Switch to meteors
+
+Additions:
+Added meteor manager – what will this do 
+added wobble to meteors
+add file structure 
