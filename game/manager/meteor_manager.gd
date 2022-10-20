@@ -9,21 +9,34 @@ const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
 var inner_positions: Array
 var outer_positions: Array
 
-func add_metor_to_screen(pos: Vector2) -> void:
-	pass
+func add_meteor_to_screen(slot: int) -> void:
+	var meteor: Meteor = p_Meteor.instantiate()
+	meteor.start_pos = self.inner_positions[slot]
+	meteor.end_pos = self.outer_positions[slot]
+	self._add_meteor_to_child(slot, meteor)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_resize_arrays()
 	_add_pos_to_inner_array()
 	_add_pos_to_outer_array()
-	print(self.inner_positions)
-	print(self.outer_positions)
+	add_meteor_to_screen(0)
+	add_meteor_to_screen(1)
+	add_meteor_to_screen(2)
+	add_meteor_to_screen(3)
+	add_meteor_to_screen(4)
+	add_meteor_to_screen(5)
+	add_meteor_to_screen(6)
+	add_meteor_to_screen(7)
+	add_meteor_to_screen(8)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
+	self.inner_node.get_child(child_num).add_child(meteor)
 
 func _resize_arrays() -> void:
 	self.inner_positions.resize(9)

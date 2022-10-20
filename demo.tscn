@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbhm5nweiaws1"]
+
+[ext_resource type="PackedScene" uid="uid://dkeb6tw0exne0" path="res://game/meteor/meteor.tscn" id="1_gokca"]
+
+[node name="Demo" type="Node2D"]
+
+[node name="meteor" parent="." instance=ExtResource("1_gokca")]
+position = Vector2(177, 218)
+
+[node name="meteor2" parent="." instance=ExtResource("1_gokca")]
+position = Vector2(150, 407)
+
+[node name="meteor3" parent="." instance=ExtResource("1_gokca")]
+position = Vector2(379, 127)
+
+[node name="meteor4" parent="." instance=ExtResource("1_gokca")]
+position = Vector2(511, 275)
+
+[node name="meteor5" parent="." instance=ExtResource("1_gokca")]
+position = Vector2(322, 324)
