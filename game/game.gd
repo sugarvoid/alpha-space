@@ -24,7 +24,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	fps_label.update_label(Engine.get_frames_per_second())
 
-func _input(event) -> void:
+func _unhandled_input(event) -> void:
 	if event.is_action_pressed("num_pad_one"):
 		print('6')
 		_shoot_laser(6)
@@ -43,13 +43,13 @@ func _input(event) -> void:
 	elif event.is_action_pressed("num_pad_six"):
 		print('5')
 		_shoot_laser(5)
-	elif event.is_action_pressed("num_pad_seven"):
+	elif event.is_action_pressed("ui_up"):
 		print('0')
 		_shoot_laser(0)
-	elif event.is_action_pressed("num_pad_eight"):
+	elif event.is_action_pressed("ui_left"):
 		print('1')
 		_shoot_laser(1)
-	elif event.is_action_pressed("num_pad_nine"):
+	elif event.is_action_pressed("ui_right"):
 		print('2')
 		_shoot_laser(2)
 	
@@ -61,6 +61,7 @@ func _connect_signals() -> void:
 func _shoot_laser(array_slot: int) -> void:
 	
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):
+		self.hand_sprite.play_press_animation()
 		var targeted_meteor: Meteor 
 		targeted_meteor = self.meteor_manager.current_meteors[array_slot]
 		var target_pos: Vector2 = targeted_meteor.global_position
