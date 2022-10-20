@@ -2,7 +2,7 @@ class_name Laser
 extends Node2D
 
 @onready var line_2d: Line2D = get_node("Line2D")
-@onready var animation_player: AnimationPlayer = get_node("AnimationPlayer")
+@onready var life_timer: Timer = get_node("Timer")
 
 var start_pos: Vector2
 var end_pos: Vector2
@@ -10,7 +10,11 @@ var end_pos: Vector2
 func _ready() -> void:
 	assert(self.start_pos != Vector2.ZERO or self.start_pos != Vector2.ZERO, "Laser does not have a start or end point!")
 	self._create_line()
-	self.animation_player.play("flash")
+	self.life_timer.start(0.08)
+	await life_timer.timeout
+	self.queue_free()
+	
+	#self.animation_player.play("flash")
 
 func _create_line() -> void:
 	self.line_2d.clear_points()
