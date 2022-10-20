@@ -30,14 +30,13 @@ func _ready() -> void:
 	self.sprite.scale = self.STARTING_SCALE
 	self.type = Meteor.TYPES.NUMBER
 	self.rotate_speed = self._get_ran_rotation_speed()
-	$label_rot_speed.text = str(self.rotate_speed)
 	self._move_to_end_pos()
 	self._increase_scale_to_one()
 	#######self._wobble()
 
 func _process(delta: float) -> void:
 	self.sprite.rotation += self.rotate_speed * delta
-	print(self.global_position)
+
 
 func check_for_match(input: String) -> bool:
 	return true

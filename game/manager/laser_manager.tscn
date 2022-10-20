@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://blypbjnijctbi"]
+
+[ext_resource type="Script" path="res://game/manager/laser_manager.gd" id="1_ftqdp"]
+
+[node name="LaserManager" type="Node2D"]
+script = ExtResource("1_ftqdp")
+
+[node name="Left" type="Marker2D" parent="."]
+position = Vector2(84, 418)
+
+[node name="Right" type="Marker2D" parent="."]
+position = Vector2(509, 433)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

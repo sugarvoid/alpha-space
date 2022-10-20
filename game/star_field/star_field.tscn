@@ -20,7 +20,7 @@ color_ramp = SubResource("GradientTexture1D_mnwrk")
 
 [node name="StarField" type="GPUParticles2D"]
 amount = 100
-lifetime = 1.4
+lifetime = 2.0
 preprocess = 3.0
 process_material = SubResource("ParticleProcessMaterial_4xhpi")
 script = ExtResource("1_fbwtk")

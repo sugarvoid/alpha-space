@@ -6,6 +6,8 @@ extends Node2D
 
 const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
 
+var current_meteors: Array
+
 var inner_positions: Array
 var outer_positions: Array
 
@@ -29,6 +31,8 @@ func _ready() -> void:
 	add_meteor_to_screen(6)
 	add_meteor_to_screen(7)
 	add_meteor_to_screen(8)
+	
+	print(self.current_meteors)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,8 +41,10 @@ func _process(delta: float) -> void:
 
 func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
 	self.inner_node.get_child(child_num).add_child(meteor)
+	self.current_meteors[child_num] = meteor
 
 func _resize_arrays() -> void:
+	self.current_meteors.resize(9)
 	self.inner_positions.resize(9)
 	self.outer_positions.resize(9)
 

@@ -10,6 +10,21 @@ config_version=5
 
 _global_script_classes=[{
 "base": "Node2D",
+"class": &"Game",
+"language": &"GDScript",
+"path": "res://game/game.gd"
+}, {
+"base": "Node2D",
+"class": &"Laser",
+"language": &"GDScript",
+"path": "res://game/laser/laser.gd"
+}, {
+"base": "Node2D",
+"class": &"LaserManager",
+"language": &"GDScript",
+"path": "res://game/manager/laser_manager.gd"
+}, {
+"base": "Node2D",
 "class": &"Meteor",
 "language": &"GDScript",
 "path": "res://game/meteor/meteor.gd"
@@ -20,6 +35,9 @@ _global_script_classes=[{
 "path": "res://game/manager/meteor_manager.gd"
 }]
 _global_script_class_icons={
+"Game": "",
+"Laser": "",
+"LaserManager": "",
 "Meteor": "",
 "MeteorManager": ""
 }
