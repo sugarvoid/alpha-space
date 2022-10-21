@@ -27,7 +27,7 @@ scale = Vector2(2, 2)
 [node name="CorkPit" parent="." instance=ExtResource("3_hqsl1")]
 
 [node name="Hand" parent="." instance=ExtResource("2_ni3ut")]
-position = Vector2(345, 562)
+position = Vector2(709, 466)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

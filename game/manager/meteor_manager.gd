@@ -7,18 +7,24 @@ extends Node2D
 const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
 const p_Explosion: PackedScene = preload("res://game/meteor/particle_explosion.tscn")
 
+const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
 var current_meteors: Array
+var current_letters: Array
 
 var inner_positions: Array
 var outer_positions: Array
 
 func add_meteor_to_screen(slot: int) -> void:
 	var meteor: Meteor = p_Meteor.instantiate()
+	meteor.letter = self._get_random_letter()
+	meteor.slot_number = slot
 	meteor.start_pos = self.inner_positions[slot]
 	meteor.end_pos = self.outer_positions[slot]
 	###self._add_meteor_to_child(slot, meteor)
 	self.add_child(meteor)
 	self.current_meteors[slot] = meteor
+	self.current_letters.append(meteor.letter)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,12 +41,15 @@ func _ready() -> void:
 	add_meteor_to_screen(7)
 	add_meteor_to_screen(8)
 	
-	print(self.current_meteors)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _get_random_letter() -> String:
+	return self.LETTERS[randi() % LETTERS.size()]
 
 func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
 	self.add_child(meteor)
@@ -54,6 +63,10 @@ func remove_meteor(meteor: Meteor) -> void:
 	
 	#self.add_child(explosion)
 	
+
+func show_current_letters() -> void:
+	for m in self.current_meteors:
+		print(m.letter)
 
 func check_if_slot_has_meteor(slot: int) -> bool:
 	print(current_meteors)
