@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkeb6tw0exne0"]
+[gd_scene load_steps=5 format=3 uid="uid://dkeb6tw0exne0"]
 
 [ext_resource type="Script" path="res://game/meteor/meteor.gd" id="1_akqqa"]
 [ext_resource type="Texture2D" uid="uid://bstauo7ogwrkh" path="res://game/meteor/meteor.png" id="2_gy8v2"]
+[ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="3_g77bd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wrd5"]
 size = Vector2(45, 51)
@@ -19,8 +20,10 @@ offset_left = -9.0
 offset_top = -23.0
 offset_right = 18.0
 offset_bottom = 25.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g77bd")
+theme_override_font_sizes/font_size = 48
 text = "P"
 
 [node name="Area2D" type="Area2D" parent="."]
