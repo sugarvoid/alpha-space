@@ -13,14 +13,12 @@ mouse_filter = 2
 script = ExtResource("1_1gp45")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
 offset_left = 35.0
 offset_right = 75.0
 offset_bottom = 26.0
 text = "00"
 
 [node name="Label2" type="Label" parent="."]
-layout_mode = 1
 offset_left = 1.0
 offset_right = 41.0
 offset_bottom = 26.0
