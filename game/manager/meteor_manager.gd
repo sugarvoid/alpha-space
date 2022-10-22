@@ -35,11 +35,11 @@ func _ready() -> void:
 	add_meteor_to_screen(0)
 	add_meteor_to_screen(1)
 	add_meteor_to_screen(2)
-	add_meteor_to_screen(3)
+	# add_meteor_to_screen(3)
 	add_meteor_to_screen(4)
 	add_meteor_to_screen(5)
 	add_meteor_to_screen(6)
-	add_meteor_to_screen(7)
+	# add_meteor_to_screen(7)
 	add_meteor_to_screen(8)
 	
 

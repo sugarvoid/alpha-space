@@ -2,12 +2,10 @@ class_name Game
 extends Node2D
 
 @onready var fps_label: Control = get_node("CanvasLayer/FPSCounter")
+@onready var word_manager: WordManager = get_node("WordManager")
 @onready var meteor_manager: MeteorManager = get_node("MeteorManager")
 @onready var laser_manager: LaserManager = get_node("LaserManager")
 @onready var hand_sprite: Sprite2D = get_node("Hand")
-
-const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-const FIRE_RATE: float = 1.0
 
 
 enum states {
@@ -18,6 +16,7 @@ enum states {
 var state: int
 var can_player_fire: bool = true
 var typed_letters: Array = []
+
 
 func _ready() -> void:
 	pass
@@ -58,7 +57,7 @@ func _unhandled_input(event) -> void:
 	if event is InputEventKey and event.is_pressed():
 		var key_typed = OS.get_keycode_string(event.keycode).to_lower()
 		# if key_typed is a letter -> then do stuff
-		if LETTERS.has(key_typed):
+		if self.word_manager.LETTERS.has(key_typed):
 			if self.meteor_manager.current_letters.has(key_typed):
 				print('MATCH!')
 			else:

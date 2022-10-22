@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d24mjh5lxojv8"]
+
+[ext_resource type="Script" path="res://game/manager/word_manager.gd" id="1_7h4fh"]
+
+[node name="WordManager" type="Node"]
+script = ExtResource("1_7h4fh")

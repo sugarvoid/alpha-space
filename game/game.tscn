@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cexyc6fl3tx2e"]
+[gd_scene load_steps=11 format=3 uid="uid://cexyc6fl3tx2e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_8vr4e"]
 [ext_resource type="PackedScene" uid="uid://c7i2xu7w4hbkw" path="res://game/hand/hand.tscn" id="2_ni3ut"]
+[ext_resource type="PackedScene" uid="uid://d24mjh5lxojv8" path="res://game/manager/word_manager.tscn" id="2_qkwtl"]
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="3_hqsl1"]
 [ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://game/star_field/star_field.tscn" id="4_onjy1"]
 [ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="5_cw3rp"]
@@ -12,6 +13,8 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8vr4e")
+
+[node name="WordManager" parent="." instance=ExtResource("2_qkwtl")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
