@@ -8,57 +8,57 @@ script = ExtResource("1_v866o")
 [node name="Inner" type="Node2D" parent="."]
 
 [node name="0" type="Marker2D" parent="Inner"]
-position = Vector2(291, 234)
+position = Vector2(494, 166)
 
 [node name="1" type="Marker2D" parent="Inner"]
-position = Vector2(300, 234)
+position = Vector2(503, 166)
 
 [node name="2" type="Marker2D" parent="Inner"]
-position = Vector2(311, 234)
+position = Vector2(514, 166)
 
 [node name="3" type="Marker2D" parent="Inner"]
-position = Vector2(291, 245)
+position = Vector2(494, 177)
 
 [node name="4" type="Marker2D" parent="Inner"]
-position = Vector2(301, 244)
+position = Vector2(504, 176)
 
 [node name="5" type="Marker2D" parent="Inner"]
-position = Vector2(311, 244)
+position = Vector2(514, 176)
 
 [node name="6" type="Marker2D" parent="Inner"]
-position = Vector2(291, 254)
+position = Vector2(494, 186)
 
 [node name="7" type="Marker2D" parent="Inner"]
-position = Vector2(301, 254)
+position = Vector2(504, 186)
 
 [node name="8" type="Marker2D" parent="Inner"]
-position = Vector2(311, 254)
+position = Vector2(514, 186)
 
 [node name="Outer" type="Node2D" parent="."]
 
 [node name="0" type="Marker2D" parent="Outer"]
-position = Vector2(230, 180)
+position = Vector2(433, 112)
 
 [node name="1" type="Marker2D" parent="Outer"]
-position = Vector2(300, 180)
+position = Vector2(503, 112)
 
 [node name="2" type="Marker2D" parent="Outer"]
-position = Vector2(370, 180)
+position = Vector2(573, 112)
 
 [node name="3" type="Marker2D" parent="Outer"]
-position = Vector2(230, 245)
+position = Vector2(433, 177)
 
 [node name="4" type="Marker2D" parent="Outer"]
-position = Vector2(301, 244)
+position = Vector2(504, 176)
 
 [node name="5" type="Marker2D" parent="Outer"]
-position = Vector2(370, 245)
+position = Vector2(573, 177)
 
 [node name="6" type="Marker2D" parent="Outer"]
-position = Vector2(230, 317)
+position = Vector2(433, 249)
 
 [node name="7" type="Marker2D" parent="Outer"]
-position = Vector2(300, 318)
+position = Vector2(503, 250)
 
 [node name="8" type="Marker2D" parent="Outer"]
-position = Vector2(370, 318)
+position = Vector2(573, 250)

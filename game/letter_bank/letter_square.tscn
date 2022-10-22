@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ddvnba4wh3m"]
+
+[ext_resource type="Texture2D" uid="uid://cuwycgx22equr" path="res://game/letter_bank/temp_icon_holder.png" id="1_gccyw"]
+[ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="2_wj4va"]
+
+[node name="LetterSquare" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gccyw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("2_wj4va")
+theme_override_font_sizes/font_size = 64
+text = "G"
+horizontal_alignment = 1
+vertical_alignment = 1

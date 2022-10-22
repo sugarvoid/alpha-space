@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvvbc1ken5fys"]
+
+[ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="1_mmcqk"]
+
+[node name="LetterBank" type="Node2D"]
+
+[node name="CorkPit" parent="." instance=ExtResource("1_mmcqk")]
+
+[node name="Slots" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Slots"]
+position = Vector2(335, 497)
+
+[node name="Marker2D2" type="Marker2D" parent="Slots"]
+position = Vector2(384, 496)
+
+[node name="Marker2D3" type="Marker2D" parent="Slots"]
+position = Vector2(435, 499)
+
+[node name="Marker2D4" type="Marker2D" parent="Slots"]
+position = Vector2(482, 499)
+
+[node name="Marker2D5" type="Marker2D" parent="Slots"]
+position = Vector2(529, 498)
+
+[node name="Marker2D6" type="Marker2D" parent="Slots"]
+position = Vector2(581, 499)
+
+[node name="Marker2D7" type="Marker2D" parent="Slots"]
+position = Vector2(628, 501)
+
+[node name="Marker2D8" type="Marker2D" parent="Slots"]
+position = Vector2(677, 500)
