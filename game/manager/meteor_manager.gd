@@ -31,6 +31,7 @@ func _ready() -> void:
 	_resize_arrays()
 	_add_pos_to_inner_array()
 	_add_pos_to_outer_array()
+	_remove_pos_nodes()
 	add_meteor_to_screen(0)
 	add_meteor_to_screen(1)
 	add_meteor_to_screen(2)
@@ -88,4 +89,7 @@ func _add_pos_to_outer_array() -> void:
 	for pos in self.outer_node.get_children():
 		self.outer_positions[i] = pos.global_position
 		i += 1
-
+func _remove_pos_nodes() -> void:
+	# Once the vectors have been put in the array, the nodes are no longer needed 
+	self.outer_node.queue_free()
+	self.inner_node.queue_free()

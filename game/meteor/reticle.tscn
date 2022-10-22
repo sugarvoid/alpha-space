@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyadvv34rt0br"]
+
+[ext_resource type="Script" path="res://game/meteor/reticle.gd" id="1_sjqkf"]
+[ext_resource type="Texture2D" uid="uid://c2xx2dt2ckyqh" path="res://game/meteor/reticle-Sheet.png" id="2_pjm7r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20cgk"]
+atlas = ExtResource("2_pjm7r")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk5xu"]
+atlas = ExtResource("2_pjm7r")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8un5q"]
+atlas = ExtResource("2_pjm7r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gffyr"]
+atlas = ExtResource("2_pjm7r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1yq8"]
+atlas = ExtResource("2_pjm7r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njud5"]
+atlas = ExtResource("2_pjm7r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dkwg"]
+animations = [{
+"frames": [SubResource("AtlasTexture_20cgk"), SubResource("AtlasTexture_uk5xu")],
+"loop": true,
+"name": &"blue",
+"speed": 3.0
+}, {
+"frames": [SubResource("AtlasTexture_8un5q"), SubResource("AtlasTexture_gffyr")],
+"loop": true,
+"name": &"red",
+"speed": 3.0
+}, {
+"frames": [SubResource("AtlasTexture_k1yq8"), SubResource("AtlasTexture_njud5")],
+"loop": true,
+"name": &"white",
+"speed": 3.0
+}]
+
+[node name="Reticle" type="Node2D"]
+script = ExtResource("1_sjqkf")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_1dkwg")
+animation = &"white"
+playing = true

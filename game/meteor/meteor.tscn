@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkeb6tw0exne0"]
+[gd_scene load_steps=6 format=3 uid="uid://dkeb6tw0exne0"]
 
 [ext_resource type="Script" path="res://game/meteor/meteor.gd" id="1_akqqa"]
 [ext_resource type="Texture2D" uid="uid://bstauo7ogwrkh" path="res://game/meteor/meteor.png" id="2_gy8v2"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="3_g77bd"]
+[ext_resource type="PackedScene" uid="uid://cyadvv34rt0br" path="res://game/meteor/reticle.tscn" id="4_l52gy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wrd5"]
 size = Vector2(45, 51)
@@ -26,6 +27,8 @@ theme_override_fonts/font = ExtResource("3_g77bd")
 theme_override_font_sizes/font_size = 48
 text = "P"
 
+[node name="Reticle" parent="." instance=ExtResource("4_l52gy")]
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -33,3 +36,5 @@ position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_5wrd5")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

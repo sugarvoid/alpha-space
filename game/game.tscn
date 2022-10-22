@@ -13,14 +13,16 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8vr4e")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("7_ufc36")]
+
 [node name="SpaceBackGround" parent="." instance=ExtResource("5_cw3rp")]
 position = Vector2(301, 297)
 
 [node name="StarField" parent="." instance=ExtResource("4_onjy1")]
 position = Vector2(301, 245)
 scale = Vector2(2, 2)
-
-[node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]
 
 [node name="LaserManager" parent="." instance=ExtResource("8_05m1i")]
 
@@ -29,10 +31,8 @@ scale = Vector2(2, 2)
 [node name="Hand" parent="." instance=ExtResource("2_ni3ut")]
 position = Vector2(709, 466)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("7_ufc36")]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_i1xb8")
 autoplay = true
+
+[node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]

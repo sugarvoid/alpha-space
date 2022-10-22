@@ -14,6 +14,7 @@ const STARTING_SCALE: Vector2 = Vector2(0.05, 0.05)
 
 var rng: RandomNumberGenerator
 
+var is_hovered: bool 
 var letter: String 
 var slot_number: int
 var start_pos: Vector2
@@ -35,6 +36,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	$Reticle.visible = self.is_hovered
 	$Control.scale = self.sprite.scale
 	self.sprite.rotation += self.rotate_speed * delta
 
@@ -96,6 +98,7 @@ func _get_ran_rotation_speed() -> float:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
+		print(event)
 		if event.button_index == 1:
 			print('clicked')
 			emit_signal("was_clicked", self)
@@ -103,3 +106,11 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				## print("Left button was released")
 				pass
 
+
+
+func _on_area_2d_mouse_entered() -> void:
+	is_hovered = true
+
+
+func _on_area_2d_mouse_exited() -> void:
+	is_hovered = false
