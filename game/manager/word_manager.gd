@@ -23,12 +23,7 @@ func _ready() -> void:
 	add_letter("y")
 	
 	self._update_word_label()
-	
-	print(check_if_word_is_vaild("trouble"))
-	print(check_if_word_is_vaild("juggle"))
-	print(check_if_word_is_vaild("truck"))
-	print(check_if_word_is_vaild("passing"))
-	print(check_if_word_is_vaild("garbage"))
+
 	
 
 func _load_words_from_file() -> void:
