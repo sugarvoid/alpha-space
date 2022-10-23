@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://v2iwiqck83oo"]
 
-[ext_resource type="Texture2D" uid="uid://scl7a80bo432" path="res://game/corkpit/cockpit22.png" id="1_5xybf"]
+[ext_resource type="Texture2D" uid="uid://bjos1yu1hewi3" path="res://game/corkpit/cockpit28887.png" id="1_2k1dh"]
 
 [node name="CorkPit" type="Sprite2D"]
-texture = ExtResource("1_5xybf")
+texture = ExtResource("1_2k1dh")
 centered = false

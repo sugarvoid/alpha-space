@@ -8,10 +8,13 @@ const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n',
 var typed_word: Array
 var running_word: String
 var running_score: int
+var VALID_WORDS: Array[String]
 
 var test_var = "test string"
 
 func _ready() -> void:
+	_load_words_from_file()
+	
 	add_letter("d")
 	add_letter("o")
 	add_letter("n")
@@ -21,6 +24,21 @@ func _ready() -> void:
 	
 	self._update_word_label()
 	
+	print(check_if_word_is_vaild("trouble"))
+	print(check_if_word_is_vaild("juggle"))
+	print(check_if_word_is_vaild("truck"))
+	print(check_if_word_is_vaild("passing"))
+	print(check_if_word_is_vaild("garbage"))
+	
+
+func _load_words_from_file() -> void:
+	var path = "res://game/manager/fixed_words.txt"
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		while not file.eof_reached():
+			var line = file.get_line()
+			VALID_WORDS.append(line)
+
 
 func get_letter_vaule(letter: String) -> int:
 	match letter:
@@ -58,8 +76,7 @@ func _update_running_word() -> void:
 
 
 func check_if_word_is_vaild(word: String) -> bool:
-	# Check if word is in vaild_word array
-	return true
+	return self.VALID_WORDS.has(word)
 
 func _reset() -> void:
 	self.running_score = 0

@@ -36,7 +36,6 @@ position = Vector2(1078, 456)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_i1xb8")
-autoplay = true
 
 [node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]
 

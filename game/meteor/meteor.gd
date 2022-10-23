@@ -15,6 +15,7 @@ const STARTING_SCALE: Vector2 = Vector2(0.05, 0.05)
 var rng: RandomNumberGenerator
 
 var is_hovered: bool 
+var is_hoverable: bool = false
 var letter: String 
 var slot_number: int
 var start_pos: Vector2
@@ -36,7 +37,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	$Reticle.visible = self.is_hovered
+	$Reticle.visible = self.is_hovered && self.is_hoverable
 	$Control.scale = self.sprite.scale
 	self.sprite.rotation += self.rotate_speed * delta
 
@@ -78,6 +79,8 @@ func _move_to_end_pos() -> void:
 func _increase_scale_to_one() -> void:
 	var tween2: Tween = create_tween()
 	tween2.tween_property(self.sprite, "scale", Vector2(1,1), self.movement_tween_time)
+	await  tween2.finished
+	self.is_hoverable = true
 
 func _wobble() -> void:
 	var tween: Tween = create_tween() 
@@ -100,7 +103,10 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if event is InputEventMouseButton and event.is_pressed():
 		print(event)
 		if event.button_index == 1:
-			print('clicked')
+			print(str(self.slot_number, ' was left clicked, letter is: ', self.letter))
+			emit_signal("was_clicked", self)
+		elif event.button_index == 2:
+			print(str(self.slot_number, ' was right clicked, letter is: ', self.letter))
 			emit_signal("was_clicked", self)
 		else:
 				## print("Left button was released")
