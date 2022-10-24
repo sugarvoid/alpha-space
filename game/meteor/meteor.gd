@@ -1,7 +1,8 @@
 class_name  Meteor
 extends Node2D
 
-signal was_clicked
+signal was_shot(m: Meteor)
+signal was_stored
 
 @onready var sprite: Sprite2D = get_node("Sprite2D")
 @onready var label: Label = get_node("Control/Label")
@@ -104,10 +105,10 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		print(event)
 		if event.button_index == 1:
 			print(str(self.slot_number, ' was left clicked, letter is: ', self.letter))
-			emit_signal("was_clicked", self)
+			emit_signal("was_shot", self)
 		elif event.button_index == 2:
 			print(str(self.slot_number, ' was right clicked, letter is: ', self.letter))
-			emit_signal("was_clicked", self)
+			emit_signal("was_stored", self)
 		else:
 				## print("Left button was released")
 				pass

@@ -15,13 +15,6 @@ var test_var = "test string"
 func _ready() -> void:
 	_load_words_from_file()
 	
-	add_letter("d")
-	add_letter("o")
-	add_letter("n")
-	add_letter("k")
-	add_letter("e")
-	add_letter("y")
-	
 	self._update_word_label()
 
 	
@@ -53,6 +46,7 @@ func get_letter_vaule(letter: String) -> int:
 			return -99
 
 func add_letter(letter: String) -> void:
+	print("we here")
 	# add points based on letter
 	typed_word.append(letter)
 	

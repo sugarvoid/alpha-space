@@ -1,6 +1,8 @@
 class_name Game
 extends Node2D
 
+signal on_word_submit
+
 @onready var fps_label: Control = get_node("CanvasLayer/FPSCounter")
 @onready var word_manager: WordManager = get_node("WordManager")
 @onready var meteor_manager: MeteorManager = get_node("MeteorManager")
@@ -13,13 +15,15 @@ enum states {
 }
 
 
+var meteors_per_round: int = 3
+
 var state: int
 var can_player_fire: bool = true
 var typed_letters: Array = []
 
 
 func _ready() -> void:
-	pass
+	self._connect_signals()
 
 
 func _process(delta: float) -> void:
@@ -55,6 +59,8 @@ func _unhandled_input(event) -> void:
 		_shoot_laser(2)
 	
 	if event is InputEventKey and event.is_pressed():
+		if event.keycode == 4194309:
+			_submit_word()
 		var key_typed = OS.get_keycode_string(event.keycode).to_lower()
 		# if key_typed is a letter -> then do stuff
 		if self.word_manager.LETTERS.has(key_typed):
@@ -71,11 +77,18 @@ func _unhandled_input(event) -> void:
 
 
 func _connect_signals() -> void:
-	pass
+	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
+	self.meteor_manager.meteor_shot.connect(self._letter_selected)
 	## self.hand_sprite.press_animation_finished.connect()
-	
+
+func _letter_selected(_m: String) -> void:
+	print("new round")
+	self.meteor_manager.new_round(self.meteors_per_round)
+
+func _submit_word() -> void:
+	print(self.word_manager.running_word)
+
 func _shoot_laser(array_slot: int) -> void:
-	
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):
 		self.hand_sprite.play_press_animation()
 		var targeted_meteor: Meteor 
@@ -88,3 +101,11 @@ func _shoot_laser(array_slot: int) -> void:
 		# no meteor in that spot
 		return
 	
+
+
+func _on_enter_button_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == 1:
+			self._submit_word()
+		else:
+			pass

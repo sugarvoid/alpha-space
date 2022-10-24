@@ -1,6 +1,9 @@
 class_name  MeteorManager
 extends Node2D
 
+signal meteor_shot
+signal meteor_stored
+
 @onready var inner_node: Node2D = get_node("Inner")
 @onready var outer_node: Node2D = get_node("Outer")
 
@@ -23,6 +26,7 @@ func add_meteor_to_screen(slot: int) -> void:
 	meteor.end_pos = self.outer_positions[slot]
 	###self._add_meteor_to_child(slot, meteor)
 	self.add_child(meteor)
+	meteor.was_shot.connect(_meteor_shot)
 	self.current_meteors[slot] = meteor
 	self.current_letters.append(meteor.letter)
 
@@ -32,15 +36,8 @@ func _ready() -> void:
 	_add_pos_to_inner_array()
 	_add_pos_to_outer_array()
 	_remove_pos_nodes()
-	add_meteor_to_screen(0)
-	add_meteor_to_screen(1)
-	add_meteor_to_screen(2)
-	# add_meteor_to_screen(3)
-	add_meteor_to_screen(4)
-	add_meteor_to_screen(5)
-	add_meteor_to_screen(6)
-	# add_meteor_to_screen(7)
-	add_meteor_to_screen(8)
+	
+	_spawn_meteors(3)
 	
 
 
@@ -48,6 +45,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func new_round(meteors: int) -> void:
+	for m in self.get_children():
+		remove_meteor(m)
+	self._spawn_meteors(meteors)
+
+func _meteor_shot(m: Meteor) -> void:
+	self.emit_signal("meteor_shot", m.letter)
+	print(m.letter)
 
 func _get_random_letter() -> String:
 	return self.LETTERS[randi() % LETTERS.size()]
@@ -63,7 +69,12 @@ func remove_meteor(meteor: Meteor) -> void:
 	meteor.queue_free()
 	
 	#self.add_child(explosion)
-	
+
+func _spawn_meteors(amount: int) -> void:
+	var slot_options: Array[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	slot_options.shuffle()
+	for i in amount:
+		self.add_meteor_to_screen(slot_options.pop_front())
 
 func show_current_letters() -> void:
 	for m in self.current_meteors:

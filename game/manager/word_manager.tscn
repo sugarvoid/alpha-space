@@ -1,13 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d24mjh5lxojv8"]
+[gd_scene load_steps=3 format=3 uid="uid://d24mjh5lxojv8"]
 
 [ext_resource type="Script" path="res://game/manager/word_manager.gd" id="1_7h4fh"]
-[ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="2_srwvr"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="3_ukeiw"]
 
 [node name="WordManager" type="Node"]
 script = ExtResource("1_7h4fh")
-
-[node name="CorkPit" parent="." instance=ExtResource("2_srwvr")]
 
 [node name="WordDisplay" type="Label" parent="."]
 offset_left = 323.0
