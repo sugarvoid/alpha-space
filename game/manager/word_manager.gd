@@ -46,6 +46,7 @@ func get_letter_vaule(letter: String) -> int:
 			return -99
 
 func add_letter(letter: String) -> void:
+	# Rename to add_letter_to_running_word
 	print("we here")
 	# add points based on letter
 	typed_word.append(letter)
@@ -56,6 +57,7 @@ func add_letter(letter: String) -> void:
 
 func _update_word_label() -> void:
 	self.word_display.text = self.running_word
+	# send running word to HUD
 	
 func _update_running_word() -> void:
 	self.running_word = ""

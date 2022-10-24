@@ -35,10 +35,8 @@ func _ready() -> void:
 	_resize_arrays()
 	_add_pos_to_inner_array()
 	_add_pos_to_outer_array()
-	_remove_pos_nodes()
-	
-	_spawn_meteors(3)
-	
+	_remove_pos_nodes()	
+	add_meteor_to_screen(1)
 
 
 
@@ -47,7 +45,9 @@ func _process(delta: float) -> void:
 	pass
 
 func new_round(meteors: int) -> void:
+	print(str("i have ", self.get_child_count(), "kids"))
 	for m in self.get_children():
+		print(m)
 		remove_meteor(m)
 	self._spawn_meteors(meteors)
 

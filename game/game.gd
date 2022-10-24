@@ -3,7 +3,7 @@ extends Node2D
 
 signal on_word_submit
 
-@onready var fps_label: Control = get_node("CanvasLayer/FPSCounter")
+@onready var fps_label: Control = get_node("HUD/FPSCounter")
 @onready var word_manager: WordManager = get_node("WordManager")
 @onready var meteor_manager: MeteorManager = get_node("MeteorManager")
 @onready var laser_manager: LaserManager = get_node("LaserManager")
@@ -15,7 +15,7 @@ enum states {
 }
 
 
-var meteors_per_round: int = 3
+var meteors_per_round: int = 5
 
 var state: int
 var can_player_fire: bool = true
@@ -24,10 +24,19 @@ var typed_letters: Array = []
 
 func _ready() -> void:
 	self._connect_signals()
+	var timer: Timer = Timer.new()
+	add_child(timer)
+	timer.start(0.01)
+	await timer.timeout
+	timer.queue_free()
+	self._new_round()
 
 
 func _process(delta: float) -> void:
 	fps_label.update_label(Engine.get_frames_per_second())
+
+func _new_round() -> void:
+	self.meteor_manager.new_round(self.meteors_per_round)
 
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("num_pad_one"):
@@ -83,7 +92,7 @@ func _connect_signals() -> void:
 
 func _letter_selected(_m: String) -> void:
 	print("new round")
-	self.meteor_manager.new_round(self.meteors_per_round)
+	self._new_round()
 
 func _submit_word() -> void:
 	print(self.word_manager.running_word)

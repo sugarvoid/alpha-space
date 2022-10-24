@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0a3mb224mr5y"]
+
+[ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://game/hud/fps_counter.tscn" id="1_gud07"]
+[ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="2_ppuhu"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="FPSCounter" parent="." instance=ExtResource("1_gud07")]
+
+[node name="Score" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 24.0
+offset_right = 90.0
+offset_bottom = 50.0
+text = "015"
+
+[node name="Score2" type="Label" parent="."]
+offset_top = 23.0
+offset_right = 48.0
+offset_bottom = 49.0
+text = "Score:"
+
+[node name="LabelRunningWord" type="Label" parent="."]
+visible = false
+offset_left = 323.0
+offset_top = 322.0
+offset_right = 715.0
+offset_bottom = 401.0
+theme_override_fonts/font = ExtResource("2_ppuhu")
+theme_override_font_sizes/font_size = 64
+text = "HAMSTER"
+horizontal_alignment = 1
+vertical_alignment = 1

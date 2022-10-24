@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://game/game.gd" id="1_8vr4e"]
 [ext_resource type="PackedScene" uid="uid://c7i2xu7w4hbkw" path="res://game/hand/hand.tscn" id="2_ni3ut"]
 [ext_resource type="PackedScene" uid="uid://d24mjh5lxojv8" path="res://game/manager/word_manager.tscn" id="2_qkwtl"]
+[ext_resource type="PackedScene" uid="uid://b0a3mb224mr5y" path="res://game/hud/hud.tscn" id="3_cdh64"]
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="3_hqsl1"]
 [ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://game/star_field/star_field.tscn" id="4_onjy1"]
 [ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="5_cw3rp"]
 [ext_resource type="PackedScene" uid="uid://brpmynuyrhbkj" path="res://game/manager/meteor_manager.tscn" id="6_guurn"]
-[ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://game/hud/fps_counter.tscn" id="7_ufc36"]
 [ext_resource type="PackedScene" uid="uid://blypbjnijctbi" path="res://game/manager/laser_manager.tscn" id="8_05m1i"]
 [ext_resource type="AudioStream" uid="uid://807lqkfqu545" path="res://game/music/Neon Night - Free CCA Synthwave Music For Games.ogg" id="9_i1xb8"]
 [ext_resource type="PackedScene" uid="uid://bvvbc1ken5fys" path="res://game/letter_bank/letter_bank.tscn" id="11_8el8g"]
@@ -20,9 +20,7 @@ script = ExtResource("1_8vr4e")
 
 [node name="WordManager" parent="." instance=ExtResource("2_qkwtl")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("7_ufc36")]
+[node name="HUD" parent="." instance=ExtResource("3_cdh64")]
 
 [node name="SpaceBackGround" parent="." instance=ExtResource("5_cw3rp")]
 position = Vector2(3, 2)
@@ -36,7 +34,8 @@ scale = Vector2(3, 3)
 [node name="CorkPit" parent="." instance=ExtResource("3_hqsl1")]
 
 [node name="Hand" parent="." instance=ExtResource("2_ni3ut")]
-position = Vector2(1078, 456)
+position = Vector2(858.164, 203.764)
+scale = Vector2(0.633436, 0.80943)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_i1xb8")
