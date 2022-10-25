@@ -8,7 +8,6 @@ signal on_word_submit
 @onready var word_manager: WordManager = load("res://game/manager/word_manager.gd").new()
 @onready var meteor_manager: MeteorManager = get_node("MeteorManager")
 @onready var laser_manager: LaserManager = get_node("LaserManager")
-@onready var hand_sprite: Sprite2D = get_node("Hand")
 @onready var hud: HUD = get_node("HUD")
 
 
@@ -18,7 +17,7 @@ enum states {
 
 
 var meteors_per_round: int = 5
-
+var round: int 
 var state: int
 var can_player_fire: bool = true
 var typed_letters: Array = []
@@ -40,6 +39,7 @@ func _process(delta: float) -> void:
 	fps_label.update_label(Engine.get_frames_per_second())
 
 func _new_round() -> void:
+	self.round += 1
 	self.meteor_manager.new_round(self.meteors_per_round)
 
 func _unhandled_input(event) -> void:
@@ -74,6 +74,10 @@ func _unhandled_input(event) -> void:
 	if event is InputEventKey and event.is_pressed():
 		if event.keycode == 4194309:
 			_submit_word()
+			
+			# start next round
+			
+			
 		var key_typed = OS.get_keycode_string(event.keycode).to_lower()
 		# if key_typed is a letter -> then do stuff
 		if self.word_manager.LETTERS.has(key_typed):
@@ -100,7 +104,7 @@ func _letter_selected(_m: String) -> void:
 	self._new_round()
 
 func _submit_word() -> void:
-	print(self.word_manager.running_word)
+	print(self.word_manager.check_if_word_is_vaild())
 
 func _shoot_laser(array_slot: int) -> void:
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):

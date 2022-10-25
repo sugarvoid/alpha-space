@@ -2,9 +2,13 @@ class_name WordManager
 extends Object
 
 signal on_running_word_update
+signal word_is_valid
+signal word_is_not_valid
 
 
 const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+var letter_bank: 
 
 var typed_word: Array
 var running_word: String
@@ -64,8 +68,8 @@ func _update_running_word() -> void:
 	
 
 
-func check_if_word_is_vaild(word: String) -> bool:
-	return self.VALID_WORDS.has(word)
+func check_if_word_is_vaild() -> bool:
+	return self.VALID_WORDS.has(self.running_word)
 
 
 func _reset() -> void:

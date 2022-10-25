@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvvbc1ken5fys"]
+[gd_scene load_steps=4 format=3 uid="uid://bvvbc1ken5fys"]
 
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="1_mmcqk"]
+[ext_resource type="Script" path="res://game/letter_bank/letter_bank.gd" id="1_x0kyc"]
 [ext_resource type="PackedScene" uid="uid://b6ddvnba4wh3m" path="res://game/letter_bank/letter_square.tscn" id="2_bmeri"]
 
 [node name="LetterBank" type="Node2D"]
+script = ExtResource("1_x0kyc")
 
 [node name="CorkPit" parent="." instance=ExtResource("1_mmcqk")]
 visible = false

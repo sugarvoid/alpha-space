@@ -35,6 +35,11 @@ _global_script_classes=[{
 "path": "res://game/manager/laser_manager.gd"
 }, {
 "base": "Node2D",
+"class": &"LetterBank",
+"language": &"GDScript",
+"path": "res://game/letter_bank/letter_bank.gd"
+}, {
+"base": "Node2D",
 "class": &"Meteor",
 "language": &"GDScript",
 "path": "res://game/meteor/meteor.gd"
@@ -48,11 +53,6 @@ _global_script_classes=[{
 "class": &"Player",
 "language": &"GDScript",
 "path": "res://game/player/player.gd"
-}, {
-"base": "Object",
-"class": &"WordManager",
-"language": &"GDScript",
-"path": "res://game/manager/word_manager.gd"
 }]
 _global_script_class_icons={
 "Game": "",
@@ -60,10 +60,10 @@ _global_script_class_icons={
 "Hand": "",
 "Laser": "",
 "LaserManager": "",
+"LetterBank": "",
 "Meteor": "",
 "MeteorManager": "",
-"Player": "",
-"WordManager": ""
+"Player": ""
 }
 
 [application]
