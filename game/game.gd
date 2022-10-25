@@ -4,10 +4,12 @@ extends Node2D
 signal on_word_submit
 
 @onready var fps_label: Control = get_node("HUD/FPSCounter")
-@onready var word_manager: WordManager = get_node("WordManager")
+
+@onready var word_manager: WordManager = load("res://game/manager/word_manager.gd").new()
 @onready var meteor_manager: MeteorManager = get_node("MeteorManager")
 @onready var laser_manager: LaserManager = get_node("LaserManager")
 @onready var hand_sprite: Sprite2D = get_node("Hand")
+@onready var hud: HUD = get_node("HUD")
 
 
 enum states {
@@ -20,9 +22,11 @@ var meteors_per_round: int = 5
 var state: int
 var can_player_fire: bool = true
 var typed_letters: Array = []
+var pizza = load("res://game/pizza_cursor.png")
 
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(pizza)
 	self._connect_signals()
 	var timer: Timer = Timer.new()
 	add_child(timer)
@@ -89,6 +93,7 @@ func _connect_signals() -> void:
 	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
 	self.meteor_manager.meteor_shot.connect(self._letter_selected)
 	## self.hand_sprite.press_animation_finished.connect()
+	self.word_manager.on_running_word_update.connect(self.hud.update_word_label)
 
 func _letter_selected(_m: String) -> void:
 	print("new round")

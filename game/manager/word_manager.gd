@@ -1,7 +1,8 @@
 class_name WordManager
-extends Node
+extends Object
 
-@onready var word_display: Label = get_node("WordDisplay")
+signal on_running_word_update
+
 
 const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
@@ -14,10 +15,7 @@ var test_var = "test string"
 
 func _ready() -> void:
 	_load_words_from_file()
-	
-	self._update_word_label()
 
-	
 
 func _load_words_from_file() -> void:
 	var path = "res://game/manager/fixed_words.txt"
@@ -45,6 +43,7 @@ func get_letter_vaule(letter: String) -> int:
 		_:
 			return -99
 
+
 func add_letter(letter: String) -> void:
 	# Rename to add_letter_to_running_word
 	print("we here")
@@ -52,22 +51,22 @@ func add_letter(letter: String) -> void:
 	typed_word.append(letter)
 	
 	self._update_running_word()
-	self._update_word_label()
+	
+	# Let hud know to update word label
+	self.emit_signal("on_running_word_update", self.running_word)
 	
 
-func _update_word_label() -> void:
-	self.word_display.text = self.running_word
-	# send running word to HUD
-	
+
 func _update_running_word() -> void:
 	self.running_word = ""
 	for letter in self.typed_word:
-		
 		self.running_word += letter
+	
 
 
 func check_if_word_is_vaild(word: String) -> bool:
 	return self.VALID_WORDS.has(word)
+
 
 func _reset() -> void:
 	self.running_score = 0

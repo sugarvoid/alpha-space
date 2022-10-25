@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0a3mb224mr5y"]
+[gd_scene load_steps=4 format=3 uid="uid://b0a3mb224mr5y"]
 
+[ext_resource type="Script" path="res://game/hud/hud.gd" id="1_as7ch"]
 [ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://game/hud/fps_counter.tscn" id="1_gud07"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="2_ppuhu"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_as7ch")
 
 [node name="FPSCounter" parent="." instance=ExtResource("1_gud07")]
 
@@ -20,8 +22,7 @@ offset_right = 48.0
 offset_bottom = 49.0
 text = "Score:"
 
-[node name="LabelRunningWord" type="Label" parent="."]
-visible = false
+[node name="lbl_running_word" type="Label" parent="."]
 offset_left = 323.0
 offset_top = 322.0
 offset_right = 715.0
