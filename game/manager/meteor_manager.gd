@@ -3,6 +3,8 @@ extends Node2D
 
 signal meteor_shot
 signal meteor_stored
+signal send_shoot
+signal send_save
 
 @onready var inner_node: Node2D = get_node("Inner")
 @onready var outer_node: Node2D = get_node("Outer")
@@ -53,10 +55,12 @@ func new_round(meteors: int) -> void:
 	self._spawn_meteors(meteors)
 
 func _meteor_shot(m: Meteor) -> void:
+	self.emit_signal("send_shoot", m.slot_number)
 	self.emit_signal("meteor_shot", m.letter)
 	print(m.letter)
 
 func _meteor_stored(m: Meteor) -> void:
+	self.emit_signal("send_save", m.slot_number)
 	self.emit_signal("meteor_stored", m.letter)
 
 func _get_random_letter() -> String:

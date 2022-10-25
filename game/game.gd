@@ -12,14 +12,14 @@ signal on_word_submit
 @onready var letter_bank: LetterBank = get_node("LetterBank")
 
 
-enum states {
+enum STATES {
 	
 }
 
 
 var meteors_per_round: int = 5
 var round: int 
-var state: int
+var state: STATES
 var can_player_fire: bool = true
 var typed_letters: Array = []
 var pizza = load("res://game/pizza_cursor.png")
@@ -95,11 +95,12 @@ func _unhandled_input(event) -> void:
 
 
 func _connect_signals() -> void:
+	self.meteor_manager.send_shoot.connect(self._shoot_laser)
 	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
 	self.meteor_manager.meteor_stored.connect(self.letter_bank.add_letter_to_bank)
 	self.meteor_manager.meteor_shot.connect(self._letter_selected)
 	self.meteor_manager.meteor_stored.connect(self._letter_selected)
-	## self.hand_sprite.press_animation_finished.connect()
+	#### self.hand_sprite.press_animation_finished.connect()
 	self.word_manager.on_running_word_update.connect(self.hud.update_word_label)
 	
 
@@ -108,11 +109,12 @@ func _letter_selected(_m: String) -> void:
 	self._new_round()
 
 func _submit_word() -> void:
-	print(self.word_manager.check_if_word_is_vaild())
+	print(str("running score is: ", self.word_manager.get_running_score()))
+	print(str("is word real: ", self.word_manager.check_if_word_is_vaild()))
 
 func _shoot_laser(array_slot: int) -> void:
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):
-		self.hand_sprite.play_press_animation()
+		#### self.hand_sprite.play_press_animation()
 		var targeted_meteor: Meteor 
 		targeted_meteor = self.meteor_manager.current_meteors[array_slot]
 		var target_pos: Vector2 = targeted_meteor.global_position

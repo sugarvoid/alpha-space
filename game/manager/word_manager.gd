@@ -12,7 +12,7 @@ var letter_bank: Array[LetterSquare]
 
 var typed_word: Array[String]
 var running_word: String
-var running_score: int
+var _running_score: int
 var VALID_WORDS: Array[String]
 
 var test_var = "test string"
@@ -20,6 +20,8 @@ var test_var = "test string"
 func _ready() -> void:
 	_load_words_from_file()
 
+func get_running_score() -> int:
+	return self._running_score
 
 func _load_words_from_file() -> void:
 	var path = "res://game/manager/fixed_words.txt"
@@ -52,7 +54,8 @@ func add_letter(letter: String) -> void:
 	# Rename to add_letter_to_running_word
 	print("we here")
 	# add points based on letter
-	typed_word.append(letter)
+	self._running_score += self.get_letter_vaule(letter)
+	self.typed_word.append(letter)
 	
 	self._update_running_word()
 	
@@ -72,8 +75,8 @@ func check_if_word_is_vaild() -> bool:
 	return self.VALID_WORDS.has(self.running_word)
 
 
-func _reset() -> void:
-	self.running_score = 0
+func reset_values() -> void:
+	self._running_score = 0
 	self.typed_word.clear()
 	self.word_to_display = ""
 	self._update_word_label()
