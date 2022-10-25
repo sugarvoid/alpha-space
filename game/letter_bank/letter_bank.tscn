@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvvbc1ken5fys"]
+[gd_scene load_steps=3 format=3 uid="uid://bvvbc1ken5fys"]
 
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="1_mmcqk"]
 [ext_resource type="Script" path="res://game/letter_bank/letter_bank.gd" id="1_x0kyc"]
-[ext_resource type="PackedScene" uid="uid://b6ddvnba4wh3m" path="res://game/letter_bank/letter_square.tscn" id="2_bmeri"]
 
 [node name="LetterBank" type="Node2D"]
 script = ExtResource("1_x0kyc")
@@ -13,29 +12,25 @@ visible = false
 [node name="Slots" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Slots"]
-position = Vector2(335, 497)
-
-[node name="LetterSquare" parent="Slots/Marker2D" instance=ExtResource("2_bmeri")]
+position = Vector2(353, 495)
 
 [node name="Marker2D2" type="Marker2D" parent="Slots"]
-position = Vector2(384, 496)
-
-[node name="LetterSquare" parent="Slots/Marker2D2" instance=ExtResource("2_bmeri")]
+position = Vector2(401, 495)
 
 [node name="Marker2D3" type="Marker2D" parent="Slots"]
-position = Vector2(435, 499)
+position = Vector2(444, 495)
 
 [node name="Marker2D4" type="Marker2D" parent="Slots"]
-position = Vector2(482, 499)
+position = Vector2(488, 496)
 
 [node name="Marker2D5" type="Marker2D" parent="Slots"]
-position = Vector2(529, 498)
+position = Vector2(533, 497)
 
 [node name="Marker2D6" type="Marker2D" parent="Slots"]
-position = Vector2(581, 499)
+position = Vector2(578, 497)
 
 [node name="Marker2D7" type="Marker2D" parent="Slots"]
-position = Vector2(628, 501)
+position = Vector2(628, 497)
 
 [node name="Marker2D8" type="Marker2D" parent="Slots"]
-position = Vector2(677, 500)
+position = Vector2(675, 499)

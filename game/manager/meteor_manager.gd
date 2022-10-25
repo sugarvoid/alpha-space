@@ -27,6 +27,7 @@ func add_meteor_to_screen(slot: int) -> void:
 	###self._add_meteor_to_child(slot, meteor)
 	self.add_child(meteor)
 	meteor.was_shot.connect(_meteor_shot)
+	meteor.was_stored.connect(_meteor_stored)
 	self.current_meteors[slot] = meteor
 	self.current_letters.append(meteor.letter)
 
@@ -54,6 +55,9 @@ func new_round(meteors: int) -> void:
 func _meteor_shot(m: Meteor) -> void:
 	self.emit_signal("meteor_shot", m.letter)
 	print(m.letter)
+
+func _meteor_stored(m: Meteor) -> void:
+	self.emit_signal("meteor_stored", m.letter)
 
 func _get_random_letter() -> String:
 	return self.LETTERS[randi() % LETTERS.size()]

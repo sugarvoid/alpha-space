@@ -1,3 +1,4 @@
+class_name LetterSquare
 extends Node2D
 
 
@@ -22,6 +23,8 @@ func _change_font_color(color: Color) -> void:
 	#self.lbl_letter.font_color = Color.REBECCA_PURPLE
 	self.lbl_letter.set("theme_override_colors/font_color", color)
 
+func set_letter_value(letter: String) -> void:
+	self.letter = letter
 
 func _on_area_2d_mouse_entered() -> void:
 	self._change_font_color(HOVER_COLOR)

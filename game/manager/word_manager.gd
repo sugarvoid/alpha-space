@@ -8,9 +8,9 @@ signal word_is_not_valid
 
 const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-var letter_bank: 
+var letter_bank: Array[LetterSquare]
 
-var typed_word: Array
+var typed_word: Array[String]
 var running_word: String
 var running_score: int
 var VALID_WORDS: Array[String]
