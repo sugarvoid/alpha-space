@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://68hr307lbk33" path="res://game/TEMP_space_background.png" id="1_vn58f"]
 
 [node name="SpaceBackGround" type="Sprite2D"]
-scale = Vector2(1.71, 1)
+position = Vector2(-10, 0)
+scale = Vector2(1.72667, 1)
 texture = ExtResource("1_vn58f")
 centered = false

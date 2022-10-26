@@ -17,13 +17,14 @@ var rng: RandomNumberGenerator
 
 var is_hovered: bool 
 var is_hoverable: bool = false
+var is_clickable: bool = false
 var letter: String 
 var slot_number: int
 var start_pos: Vector2
 var end_pos: Vector2
 var rotate_speed: float
 var rotate_dir: int
-var movement_tween_time: float = 3.5
+var movement_tween_time: float = 1.5
 
 
 var value: String
@@ -82,6 +83,7 @@ func _increase_scale_to_one() -> void:
 	tween2.tween_property(self.sprite, "scale", Vector2(1,1), self.movement_tween_time)
 	await  tween2.finished
 	self.is_hoverable = true
+	self.is_clickable = true
 
 func _wobble() -> void:
 	var tween: Tween = create_tween() 
@@ -101,7 +103,7 @@ func _get_ran_rotation_speed() -> float:
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and self.is_clickable:
 		print(event)
 		if event.button_index == 1:
 			print(str(self.slot_number, ' was left clicked, letter is: ', self.letter))

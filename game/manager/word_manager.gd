@@ -17,13 +17,10 @@ var VALID_WORDS: Array[String]
 
 var test_var = "test string"
 
-func _ready() -> void:
-	_load_words_from_file()
-
 func get_running_score() -> int:
 	return self._running_score
 
-func _load_words_from_file() -> void:
+func load_words_from_file() -> void:
 	var path = "res://game/manager/fixed_words.txt"
 	if FileAccess.file_exists(path):
 		var file = FileAccess.open(path, FileAccess.READ)
@@ -78,5 +75,6 @@ func check_if_word_is_vaild() -> bool:
 func reset_values() -> void:
 	self._running_score = 0
 	self.typed_word.clear()
-	self.word_to_display = ""
-	self._update_word_label()
+	self.running_word = ""
+	self.emit_signal("on_running_word_update", self.running_word)
+	

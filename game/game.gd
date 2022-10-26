@@ -26,6 +26,7 @@ var pizza = load("res://game/pizza_cursor.png")
 
 
 func _ready() -> void:
+	self.word_manager.load_words_from_file()
 	Input.set_custom_mouse_cursor(pizza)
 	self._connect_signals()
 	var timer: Timer = Timer.new()
@@ -111,6 +112,13 @@ func _letter_selected(_m: String) -> void:
 func _submit_word() -> void:
 	print(str("running score is: ", self.word_manager.get_running_score()))
 	print(str("is word real: ", self.word_manager.check_if_word_is_vaild()))
+	if self.word_manager.check_if_word_is_vaild():
+		print('vaild word')
+	else:
+		print('wrong')
+	
+	self.word_manager.reset_values()
+	self.hud
 
 func _shoot_laser(array_slot: int) -> void:
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):

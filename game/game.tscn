@@ -19,7 +19,8 @@ script = ExtResource("1_8vr4e")
 [node name="HUD" parent="." instance=ExtResource("3_cdh64")]
 
 [node name="SpaceBackGround" parent="." instance=ExtResource("5_cw3rp")]
-position = Vector2(3, 2)
+position = Vector2(-7, 2)
+scale = Vector2(1.72833, 0.977)
 
 [node name="StarField" parent="." instance=ExtResource("4_onjy1")]
 position = Vector2(499, 181)
