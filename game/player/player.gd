@@ -8,6 +8,7 @@ enum targeting_state {
 	GRAB
 }
 var reticle_state: int
+var bank_size: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

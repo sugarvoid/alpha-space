@@ -11,26 +11,26 @@ visible = false
 
 [node name="Slots" type="Node2D" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="Slots"]
+[node name="Slot0" type="Marker2D" parent="Slots"]
 position = Vector2(353, 495)
 
-[node name="Marker2D2" type="Marker2D" parent="Slots"]
+[node name="Slot1" type="Marker2D" parent="Slots"]
 position = Vector2(401, 495)
 
-[node name="Marker2D3" type="Marker2D" parent="Slots"]
+[node name="Slot2" type="Marker2D" parent="Slots"]
 position = Vector2(444, 495)
 
-[node name="Marker2D4" type="Marker2D" parent="Slots"]
+[node name="Slot3" type="Marker2D" parent="Slots"]
 position = Vector2(488, 496)
 
-[node name="Marker2D5" type="Marker2D" parent="Slots"]
+[node name="Slot4" type="Marker2D" parent="Slots"]
 position = Vector2(533, 497)
 
-[node name="Marker2D6" type="Marker2D" parent="Slots"]
+[node name="Slot5" type="Marker2D" parent="Slots"]
 position = Vector2(578, 497)
 
-[node name="Marker2D7" type="Marker2D" parent="Slots"]
+[node name="Slot6" type="Marker2D" parent="Slots"]
 position = Vector2(628, 497)
 
-[node name="Marker2D8" type="Marker2D" parent="Slots"]
+[node name="Slot7" type="Marker2D" parent="Slots"]
 position = Vector2(675, 499)

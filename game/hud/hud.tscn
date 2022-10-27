@@ -1,28 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0a3mb224mr5y"]
+[gd_scene load_steps=5 format=3 uid="uid://b0a3mb224mr5y"]
 
 [ext_resource type="Script" path="res://game/hud/hud.gd" id="1_as7ch"]
 [ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://game/hud/fps_counter.tscn" id="1_gud07"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="2_ppuhu"]
+[ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="2_sfbpq"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_as7ch")
 
+[node name="CorkPit" parent="." instance=ExtResource("2_sfbpq")]
+
 [node name="FPSCounter" parent="." instance=ExtResource("1_gud07")]
 
-[node name="Score" type="Label" parent="."]
-offset_left = 50.0
-offset_top = 24.0
-offset_right = 90.0
-offset_bottom = 50.0
-text = "015"
+[node name="Distance" type="Node2D" parent="."]
+position = Vector2(810, 395)
+rotation = 0.258309
+skew = 0.244346
+metadata/_edit_group_ = true
 
-[node name="Score2" type="Label" parent="."]
-offset_top = 23.0
-offset_right = 48.0
-offset_bottom = 49.0
-text = "Score:"
+[node name="lbl_DistanceLeft" type="Label" parent="Distance"]
+offset_right = 81.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 48
+text = "100"
 
-[node name="lbl_running_word" type="Label" parent="."]
+[node name="static_Distance" type="Label" parent="Distance"]
+offset_left = 87.5097
+offset_top = -4.96857
+offset_right = 144.51
+offset_bottom = 65.0314
+theme_override_font_sizes/font_size = 48
+text = "kn"
+
+[node name="lbl_RunningWord" type="Label" parent="."]
 offset_left = 323.0
 offset_top = 322.0
 offset_right = 715.0

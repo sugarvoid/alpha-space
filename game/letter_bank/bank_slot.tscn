@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba7fy4aio1l26"]
+
+[ext_resource type="Script" path="res://game/letter_bank/bank_slot.gd" id="1_hf4r1"]
+[ext_resource type="PackedScene" uid="uid://b6ddvnba4wh3m" path="res://game/letter_bank/letter_square.tscn" id="2_sgqh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ggd2"]
+size = Vector2(43, 44)
+
+[node name="BankSlot" type="Node2D"]
+script = ExtResource("1_hf4r1")
+
+[node name="LetterSquare" parent="." instance=ExtResource("2_sgqh5")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8ggd2")
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]
+[connection signal="mouse_entered" from="ClickArea" to="." method="_on_click_area_mouse_entered"]
+[connection signal="mouse_exited" from="ClickArea" to="." method="_on_click_area_mouse_exited"]
