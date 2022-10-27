@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://coq7rqwpbf6rs"]
+[gd_scene load_steps=9 format=3 uid="uid://coq7rqwpbf6rs"]
 
 [ext_resource type="Texture2D" uid="uid://bpfa7asdpbk24" path="res://game/screen/start_screen/start_screen.png" id="1_jfhku"]
+[ext_resource type="Script" path="res://game/screen/start_screen/start_screen.gd" id="1_ustq1"]
+[ext_resource type="AudioStream" uid="uid://cm1gw4072fonv" path="res://game/music/Juhani Junkala [Retro Game Music Pack] Title Screen.ogg" id="2_g8xkf"]
+[ext_resource type="Texture2D" uid="uid://c84l2uxluigab" path="res://game/screen/start_screen/tmp_button.png" id="4_d2ori"]
+[ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="4_flwk7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asrrk"]
+atlas = ExtResource("4_d2ori")
+region = Rect2(0, 0, 256, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq6hu"]
+atlas = ExtResource("4_d2ori")
+region = Rect2(512, 0, 256, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c27ci"]
+atlas = ExtResource("4_d2ori")
+region = Rect2(256, 0, 256, 80)
 
 [node name="start_screen" type="Control"]
 layout_mode = 3
@@ -9,8 +25,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ustq1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_jfhku")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g8xkf")
+volume_db = -12.488
+autoplay = true
+
+[node name="btn_Start" type="TextureButton" parent="."]
+offset_left = 328.0
+offset_top = 266.0
+offset_right = 696.0
+offset_bottom = 412.0
+texture_normal = SubResource("AtlasTexture_asrrk")
+texture_pressed = SubResource("AtlasTexture_pq6hu")
+texture_hover = SubResource("AtlasTexture_c27ci")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 54.0
+offset_right = 854.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("4_flwk7")
+theme_override_font_sizes/font_size = 128
+text = "ALPHA SPACE"
+
+[node name="lbl_Version" type="Label" parent="."]
+offset_left = 916.0
+offset_top = 2.0
+offset_right = 1025.0
+offset_bottom = 59.0
+text = "0.1.0"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 431.0
+offset_top = 294.0
+offset_right = 626.0
+offset_bottom = 348.0
+text = "PLAY"
+
+[connection signal="pressed" from="btn_Start" to="." method="_on_btn_start_pressed"]

@@ -59,6 +59,7 @@ func _meteor_stored(m: Meteor) -> void:
 
 
 func _get_random_letter() -> String:
+	randomize()
 	return self.LETTERS[randi() % LETTERS.size()]
 
 

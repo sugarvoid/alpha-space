@@ -99,6 +99,7 @@ func _submit_word() -> void:
 		self.hud.update_distance_left_label(self._distance_to_goal)
 	else:
 		# TODO: Remove me!
+		# take a life????
 		print(str(word_manager.running_word), ' is not a vaild word')
 	
 	self.word_manager.reset_values()
