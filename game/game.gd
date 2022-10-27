@@ -94,6 +94,7 @@ func _submit_word() -> void:
 		# TODO: Remove me!
 		print(str(word_manager.running_word), ' is a vaild word')
 		# Play positive sound
+		self.hud.play_score_animation(word_manager.get_running_score())
 		self._lower_distance_left(self.word_manager.get_running_score())
 		self.hud.update_distance_left_label(self._distance_to_goal)
 	else:

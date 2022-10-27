@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://game/star_field/star_field.tscn" id="4_onjy1"]
 [ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="5_cw3rp"]
 [ext_resource type="PackedScene" uid="uid://brpmynuyrhbkj" path="res://game/manager/meteor_manager.tscn" id="6_guurn"]
+[ext_resource type="AudioStream" uid="uid://ryhdvsec48cy" path="res://game/music/Juhani Junkala [Retro Game Music Pack] Level 1.ogg" id="7_w06r6"]
 [ext_resource type="PackedScene" uid="uid://blypbjnijctbi" path="res://game/manager/laser_manager.tscn" id="8_05m1i"]
-[ext_resource type="AudioStream" uid="uid://807lqkfqu545" path="res://game/music/Neon Night - Free CCA Synthwave Music For Games.ogg" id="9_i1xb8"]
 [ext_resource type="PackedScene" uid="uid://bvvbc1ken5fys" path="res://game/letter_bank/letter_bank.tscn" id="11_8el8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s02g2"]
@@ -31,7 +31,8 @@ scale = Vector2(3, 3)
 [node name="CorkPit" parent="." instance=ExtResource("3_hqsl1")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_i1xb8")
+stream = ExtResource("7_w06r6")
+autoplay = true
 
 [node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]
 

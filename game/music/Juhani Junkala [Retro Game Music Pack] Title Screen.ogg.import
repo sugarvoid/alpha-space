@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm1gw4072fonv"
+path="res://.godot/imported/Juhani Junkala [Retro Game Music Pack] Title Screen.ogg-bdb3e61d8a8c6d93b81b678032672a6e.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/music/Juhani Junkala [Retro Game Music Pack] Title Screen.ogg"
+dest_files=["res://.godot/imported/Juhani Junkala [Retro Game Music Pack] Title Screen.ogg-bdb3e61d8a8c6d93b81b678032672a6e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
