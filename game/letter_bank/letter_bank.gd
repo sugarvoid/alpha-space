@@ -1,6 +1,8 @@
 class_name LetterBank
 extends Node2D
 
+signal on_valid_store
+
 @onready var slot_0 : BankSlot = get_node("Slots/BankSlot0")
 @onready var slot_1 : BankSlot = get_node("Slots/BankSlot1")
 @onready var slot_2 : BankSlot = get_node("Slots/BankSlot2")
@@ -32,6 +34,7 @@ func add_letter_to_bank(letter: String) -> void:
 		if slot.is_open:
 			print("HEELOOOOOO!!!")
 			slot.add_letter(letter)
+			emit_signal("on_valid_store", letter)
 			return
 
 

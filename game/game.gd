@@ -106,13 +106,12 @@ func _connect_signals() -> void:
 	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
 	self.meteor_manager.meteor_stored.connect(self.letter_bank.add_letter_to_bank)
 	self.meteor_manager.meteor_shot.connect(self._letter_selected)
-	self.meteor_manager.meteor_stored.connect(self._letter_selected)
+	self.letter_bank.on_valid_store.connect(self._letter_selected)
 	#### self.hand_sprite.press_animation_finished.connect()
 	self.word_manager.on_running_word_update.connect(self.hud.update_word_label)
 	
 
 func _letter_selected(_m: String) -> void:
-	print("new round")
 	self._new_round()
 
 func _submit_word() -> void:
