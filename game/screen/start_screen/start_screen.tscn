@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://coq7rqwpbf6rs"]
+
+[ext_resource type="Texture2D" uid="uid://bpfa7asdpbk24" path="res://game/screen/start_screen/start_screen.png" id="1_jfhku"]
+
+[node name="start_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_jfhku")
