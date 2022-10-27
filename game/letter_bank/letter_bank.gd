@@ -21,11 +21,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _add_pos_to_spwan_point_array() -> void:
-	var i = 0
-	for pos in self.slots.get_children():
-		self.letter_spawn_positions[i] = pos.global_position
-		i += 1
+
 
 
 func add_letter_to_bank(letter: String) -> void:
@@ -38,6 +34,4 @@ func add_letter_to_bank(letter: String) -> void:
 			return
 
 
-func _remove_pos_nodes() -> void:
-	# Once the vectors have been put in the array, the nodes are no longer needed 
-	self.slots.queue_free()
+

@@ -15,10 +15,10 @@ var running_word: String
 var _running_score: int
 var VALID_WORDS: Array[String]
 
-var test_var = "test string"
 
 func get_running_score() -> int:
 	return self._running_score
+
 
 func load_words_from_file() -> void:
 	var path = "res://game/manager/fixed_words.txt"
@@ -49,7 +49,6 @@ func get_letter_vaule(letter: String) -> int:
 
 func add_letter(letter: String) -> void:
 	# Rename to add_letter_to_running_word
-	print("we here")
 	# add points based on letter
 	self._running_score += self.get_letter_vaule(letter)
 	self.typed_word.append(letter)
@@ -58,14 +57,12 @@ func add_letter(letter: String) -> void:
 	
 	# Let hud know to update word label
 	self.emit_signal("on_running_word_update", self.running_word)
-	
 
 
 func _update_running_word() -> void:
 	self.running_word = ""
 	for letter in self.typed_word:
 		self.running_word += letter
-	
 
 
 func check_if_word_is_vaild() -> bool:
@@ -77,4 +74,3 @@ func reset_values() -> void:
 	self.typed_word.clear()
 	self.running_word = ""
 	self.emit_signal("on_running_word_update", self.running_word)
-	

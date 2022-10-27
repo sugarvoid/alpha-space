@@ -42,34 +42,33 @@ func _ready() -> void:
 	add_meteor_to_screen(1)
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func new_round(meteors: int) -> void:
-	print(str("i have ", self.get_child_count(), "kids"))
 	for m in self.get_children():
 		remove_meteor(m)
 	self._spawn_meteors(meteors)
 
+
 func _meteor_shot(m: Meteor) -> void:
 	self.emit_signal("send_shoot", m.slot_number)
 	self.emit_signal("meteor_shot", m.letter)
-	print(m.letter)
+
 
 func _meteor_stored(m: Meteor) -> void:
 	self.emit_signal("send_save", m.slot_number)
 	self.emit_signal("meteor_stored", m.letter)
 
+
 func _get_random_letter() -> String:
 	return self.LETTERS[randi() % LETTERS.size()]
+
 
 func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
 	self.add_child(meteor)
 	self.current_meteors[child_num] = meteor
 
+
 func remove_meteor(meteor: Meteor) -> void:
+	#TODO: Add explosion animation 
 	print(meteor)
 	#var explosion = p_Explosion.instantiate()
 	#explosion.position = meteor.global_position

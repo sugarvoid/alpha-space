@@ -47,9 +47,6 @@ func _process(delta: float) -> void:
 func _update_label() -> void:
 	self.label.text = self.letter.to_upper()
 
-func check_for_match(input: String) -> bool:
-	return true
-
 func get_current_scale() -> Vector2:
 	return self.scale
 
@@ -102,7 +99,7 @@ func _get_ran_rotation_speed() -> float:
 	return rng.randf_range(-0.5, 0.5)
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and self.is_clickable:
 		print(event)
 		if event.button_index == 1:

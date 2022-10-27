@@ -8,15 +8,14 @@
 script = ExtResource("1_x0kyc")
 
 [node name="CorkPit" parent="." instance=ExtResource("1_mmcqk")]
-visible = false
 
 [node name="Slots" type="Node2D" parent="."]
 
 [node name="BankSlot0" parent="Slots" instance=ExtResource("3_3mfnw")]
-position = Vector2(433, 490)
+position = Vector2(448, 494)
 
 [node name="BankSlot1" parent="Slots" instance=ExtResource("3_3mfnw")]
-position = Vector2(490, 491)
+position = Vector2(513, 494)
 
 [node name="BankSlot2" parent="Slots" instance=ExtResource("3_3mfnw")]
-position = Vector2(544, 492)
+position = Vector2(580, 495)

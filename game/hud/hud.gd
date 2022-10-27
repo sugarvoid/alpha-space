@@ -5,7 +5,6 @@ extends CanvasLayer
 @onready var lbl_distance_left: Label = get_node("Distance/lbl_DistanceLeft")
 
 
-
 func _ready() -> void:
 	lbl_running_word.text = ""
 
@@ -19,5 +18,5 @@ func update_word_label(word: String) -> void:
 	lbl_running_word.text = word
 
 
-func update_distance_letf_label(number: int) -> void:
+func update_distance_left_label(number: int) -> void:
 	lbl_distance_left.text = str(number)

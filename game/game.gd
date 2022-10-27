@@ -10,7 +10,6 @@ signal on_word_submit
 @onready var laser_manager: LaserManager = get_node("LaserManager")
 @onready var hud: HUD = get_node("HUD")
 @onready var letter_bank: LetterBank = get_node("LetterBank")
-
 @onready var slot_0: BankSlot = get_node("LetterBank/Slots/BankSlot0")
 @onready var slot_1: BankSlot = get_node("LetterBank/Slots/BankSlot1")
 @onready var slot_2: BankSlot = get_node("LetterBank/Slots/BankSlot2")
@@ -27,9 +26,12 @@ var can_player_fire: bool = true
 var typed_letters: Array = []
 var pizza = load("res://game/pizza_cursor.png")
 
+var _distance_to_goal: int = 100
+
 
 func _ready() -> void:
 	self.word_manager.load_words_from_file()
+	self.hud.update_distance_left_label(self._distance_to_goal)
 	Input.set_custom_mouse_cursor(pizza)
 	self._connect_signals()
 	var timer: Timer = Timer.new()
@@ -48,33 +50,6 @@ func _new_round() -> void:
 	self.meteor_manager.new_round(self.meteors_per_round)
 
 func _unhandled_input(event) -> void:
-	if event.is_action_pressed("num_pad_one"):
-		print('6')
-		_shoot_laser(6)
-	elif event.is_action_pressed("num_pad_two"):
-		print('7')
-		_shoot_laser(7)
-	elif event.is_action_pressed("num_pad_three"):
-		print('8')
-		_shoot_laser(8)
-	elif event.is_action_pressed("num_pad_four"):
-		print('3')
-		_shoot_laser(3)
-	elif event.is_action_pressed("num_pad_five"):
-		print('4')
-		_shoot_laser(4)
-	elif event.is_action_pressed("num_pad_six"):
-		print('5')
-		_shoot_laser(5)
-	elif event.is_action_pressed("num_pad_seven"):
-		print('0')
-		_shoot_laser(0)
-	elif event.is_action_pressed("num_pad_eight"):
-		print('1')
-		_shoot_laser(1)
-	elif event.is_action_pressed("num_pad_nine"):
-		print('2')
-		_shoot_laser(2)
 	
 	if event is InputEventKey and event.is_pressed():
 		if event.keycode == 4194309:
@@ -115,12 +90,15 @@ func _letter_selected(_m: String) -> void:
 	self._new_round()
 
 func _submit_word() -> void:
-	print(str("running score is: ", self.word_manager.get_running_score()))
-	print(str("is word real: ", self.word_manager.check_if_word_is_vaild()))
 	if self.word_manager.check_if_word_is_vaild():
-		print('vaild word')
+		# TODO: Remove me!
+		print(str(word_manager.running_word), ' is a vaild word')
+		# Play positive sound
+		self._lower_distance_left(self.word_manager.get_running_score())
+		self.hud.update_distance_left_label(self._distance_to_goal)
 	else:
-		print('wrong')
+		# TODO: Remove me!
+		print(str(word_manager.running_word), ' is not a vaild word')
 	
 	self.word_manager.reset_values()
 	self.hud
@@ -139,6 +117,9 @@ func _shoot_laser(array_slot: int) -> void:
 		return
 	
 
+func _lower_distance_left(value: int) -> void:
+	self._distance_to_goal -= value
+	
 
 func _on_enter_button_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
