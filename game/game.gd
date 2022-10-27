@@ -11,6 +11,9 @@ signal on_word_submit
 @onready var hud: HUD = get_node("HUD")
 @onready var letter_bank: LetterBank = get_node("LetterBank")
 
+@onready var slot_0: BankSlot = get_node("LetterBank/Slots/BankSlot0")
+@onready var slot_1: BankSlot = get_node("LetterBank/Slots/BankSlot1")
+@onready var slot_2: BankSlot = get_node("LetterBank/Slots/BankSlot2")
 
 enum STATES {
 	
@@ -96,6 +99,9 @@ func _unhandled_input(event) -> void:
 
 
 func _connect_signals() -> void:
+	self.slot_0.on_letter_used.connect(self.word_manager.add_letter)
+	self.slot_1.on_letter_used.connect(self.word_manager.add_letter)
+	self.slot_2.on_letter_used.connect(self.word_manager.add_letter)
 	self.meteor_manager.send_shoot.connect(self._shoot_laser)
 	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
 	self.meteor_manager.meteor_stored.connect(self.letter_bank.add_letter_to_bank)

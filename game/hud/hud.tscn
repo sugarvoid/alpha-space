@@ -9,6 +9,7 @@
 script = ExtResource("1_as7ch")
 
 [node name="CorkPit" parent="." instance=ExtResource("2_sfbpq")]
+visible = false
 
 [node name="FPSCounter" parent="." instance=ExtResource("1_gud07")]
 

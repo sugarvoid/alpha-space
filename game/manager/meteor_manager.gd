@@ -50,7 +50,6 @@ func _process(delta: float) -> void:
 func new_round(meteors: int) -> void:
 	print(str("i have ", self.get_child_count(), "kids"))
 	for m in self.get_children():
-		print(m)
 		remove_meteor(m)
 	self._spawn_meteors(meteors)
 
