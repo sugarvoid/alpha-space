@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://coq7rqwpbf6rs"]
+[gd_scene load_steps=11 format=3 uid="uid://coq7rqwpbf6rs"]
 
 [ext_resource type="Texture2D" uid="uid://bpfa7asdpbk24" path="res://game/screen/start_screen/start_screen.png" id="1_jfhku"]
 [ext_resource type="Script" path="res://game/screen/start_screen/start_screen.gd" id="1_ustq1"]
@@ -18,6 +18,27 @@ region = Rect2(512, 0, 256, 80)
 atlas = ExtResource("4_d2ori")
 region = Rect2(256, 0, 256, 80)
 
+[sub_resource type="Animation" id="Animation_lt6sk"]
+resource_name = "fade_in_music"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-36.608, -12.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2h8i0"]
+_data = {
+"fade_in_music": SubResource("Animation_lt6sk")
+}
+
 [node name="start_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -34,7 +55,6 @@ texture = ExtResource("1_jfhku")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g8xkf")
-volume_db = -12.488
 autoplay = true
 
 [node name="btn_Start" type="TextureButton" parent="."]
@@ -68,5 +88,10 @@ offset_top = 294.0
 offset_right = 626.0
 offset_bottom = 348.0
 text = "PLAY"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2h8i0")
+}
 
 [connection signal="pressed" from="btn_Start" to="." method="_on_btn_start_pressed"]
