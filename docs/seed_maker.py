@@ -18,9 +18,14 @@ def random_with_N_digits(n):
 def get_three_letters(): 
     return "".join(choices(ascii_lowercase, k=3))
 
+def get_new_seed()-> str:
+    return (f"{random_with_N_digits(3)}{get_three_letters()}")
+
 def add_day():
     pass
     #unix_date = datetime.now(timezone.utc) + timedelta(days=1)
+
+
 
 def export_to_file(json_s):
     with open("out_put.json", "w") as outfile:
@@ -34,41 +39,16 @@ s = SeedObject('2022-12-22', '123aaa')
 
 data = [ ]
 
-d = s.date
-sv = s.seed
 
-data.append({
-        'Date': d,
-        'Seed': sv,
+def add_seed_to_list(s: SeedObject):
+    data.append({
+        'Date': s.date,
+        'Seed': s.seed,
     },)
 
-data.append({
-        'Date': d,
-        'Seed': sv,
-    },)
 
-data.append({
-    'Date': d,
-    'Seed': sv,
-},)
-
-
-
-list_to_export = [
-    {
-        'Date': '2022-12-22',
-        'Seed': '123aaa',
-    },
-    {
-        'Date': '2022-10-22',
-        'Seed': '123bbb',
-    },
-
-]
-
-
-# for x in range(10):
-#     print(f"{random_with_N_digits(3)}{get_three_letters()}")
+for x in range(10):
+     print(f"{random_with_N_digits(3)}{get_three_letters()}")
 
 unix_date = datetime.now(timezone.utc) + timedelta(days=1)
 #unix_date = datetime.utcfromtimestamp(unix_time).strftime('%Y-%m-%d')
