@@ -8,6 +8,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	lbl_running_word.text = ""
+	$SeedInfo/lbl_Name.text = Seeder.seed_name
 
 
 func _process(delta: float) -> void:

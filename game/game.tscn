@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cexyc6fl3tx2e"]
+[gd_scene load_steps=12 format=3 uid="uid://cexyc6fl3tx2e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_8vr4e"]
 [ext_resource type="PackedScene" uid="uid://b0a3mb224mr5y" path="res://game/hud/hud.tscn" id="3_cdh64"]
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="3_hqsl1"]
 [ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://game/star_field/star_field.tscn" id="4_onjy1"]
 [ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="5_cw3rp"]
-[ext_resource type="PackedScene" uid="uid://brpmynuyrhbkj" path="res://game/manager/meteor_manager.tscn" id="6_guurn"]
+[ext_resource type="PackedScene" uid="uid://cwawxlnt8lk1l" path="res://game/manager/meteor_manager.tscn" id="6_guurn"]
 [ext_resource type="AudioStream" uid="uid://807lqkfqu545" path="res://game/music/Neon Night - Free CCA Synthwave Music For Games.ogg" id="7_efttr"]
 [ext_resource type="PackedScene" uid="uid://blypbjnijctbi" path="res://game/manager/laser_manager.tscn" id="8_05m1i"]
+[ext_resource type="AudioStream" uid="uid://778ft11x2lnd" path="res://game/manager/correct.wav" id="10_8cnsc"]
 [ext_resource type="PackedScene" uid="uid://bvvbc1ken5fys" path="res://game/letter_bank/letter_bank.tscn" id="11_8el8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s02g2"]
@@ -44,4 +45,5 @@ autoplay = true
 position = Vector2(670, 434)
 shape = SubResource("RectangleShape2D_s02g2")
 
-[connection signal="input_event" from="EnterButton" to="." method="_on_enter_button_input_event"]
+[node name="aud_Correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8cnsc")

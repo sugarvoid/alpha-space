@@ -9,6 +9,9 @@ signal send_save
 @onready var inner_node: Node2D = get_node("Inner")
 @onready var outer_node: Node2D = get_node("Outer")
 
+@onready var meteors: Node = get_node("Meteors")
+
+
 const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
 const p_Explosion: PackedScene = preload("res://game/meteor/particle_explosion.tscn")
 
@@ -27,7 +30,7 @@ func add_meteor_to_screen(slot: int) -> void:
 	meteor.start_pos = self.inner_positions[slot]
 	meteor.end_pos = self.outer_positions[slot]
 	###self._add_meteor_to_child(slot, meteor)
-	self.add_child(meteor)
+	self.meteors.add_child(meteor)
 	meteor.was_shot.connect(_meteor_shot)
 	meteor.was_stored.connect(_meteor_stored)
 	self.current_meteors[slot] = meteor
@@ -43,28 +46,30 @@ func _ready() -> void:
 
 
 func new_round(meteors: int) -> void:
-	for m in self.get_children():
+	for m in self.meteors.get_children():
 		remove_meteor(m)
 	self._spawn_meteors(meteors)
 
 
 func _meteor_shot(m: Meteor) -> void:
+
 	self.emit_signal("send_shoot", m.slot_number)
 	self.emit_signal("meteor_shot", m.letter)
 
 
 func _meteor_stored(m: Meteor) -> void:
+
 	self.emit_signal("send_save", m.slot_number)
 	self.emit_signal("meteor_stored", m.letter)
 
 
 func _get_random_letter() -> String:
-	randomize()
+
 	return self.LETTERS[randi() % LETTERS.size()]
 
 
 func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
-	self.add_child(meteor)
+	self.meteors.add_child(meteor)
 	self.current_meteors[child_num] = meteor
 
 

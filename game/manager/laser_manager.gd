@@ -19,6 +19,7 @@ func add_lasers_to_screen(target: Vector2) -> void:
 	laser_right.start_pos = target
 	laser_right.end_pos = right_turrent.global_position
 	
+	$AudioStreamPlayer.play()
 	self.add_child(laser_left)
 	self.add_child(laser_right)
 

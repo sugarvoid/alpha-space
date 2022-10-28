@@ -62,7 +62,7 @@ offset_left = 87.5097
 offset_top = -4.96857
 offset_right = 144.51
 offset_bottom = 65.0314
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "AU"
 
 [node name="lbl_RunningWord" type="Label" parent="."]
@@ -93,3 +93,26 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_joqor")
 }
+
+[node name="SeedInfo" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 145.0
+offset_top = 326.0
+offset_right = 185.0
+offset_bottom = 366.0
+metadata/_edit_group_ = true
+
+[node name="lbl_Name" type="Label" parent="SeedInfo"]
+offset_left = 112.0
+offset_top = 252.0
+offset_right = 183.0
+offset_bottom = 278.0
+text = "seddd na"
+
+[node name="lbl_Name2" type="Label" parent="SeedInfo"]
+offset_left = 66.0
+offset_top = 252.0
+offset_right = 108.0
+offset_bottom = 278.0
+text = "Seed:"
