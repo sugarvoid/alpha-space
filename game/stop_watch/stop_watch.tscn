@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca3t4hrh3lidq"]
+
+[ext_resource type="Script" path="res://game/stop_watch/stop_watch.gd" id="1_pfmac"]
+
+[node name="StopWatch" type="Node"]
+script = ExtResource("1_pfmac")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "rrrrr"

@@ -26,3 +26,9 @@ func update_distance_left_label(number: int) -> void:
 func play_score_animation(number: int) -> void:
 	$Score/Label.text = str(number)
 	self.aniply.play("show_score")
+
+func block_all_mouse_inputs() -> void:
+	$MouseBlocker.set_mouse_filter(0)
+
+func allow_mouse_inputs() -> void:
+	$MouseBlocker.set_mouse_filter(2)

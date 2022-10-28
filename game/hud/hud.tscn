@@ -40,6 +40,17 @@ _data = {
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_as7ch")
 
+[node name="DashStatic" type="Sprite2D" parent="."]
+
+[node name="MouseBlocker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="CorkPit" parent="." instance=ExtResource("2_sfbpq")]
 visible = false
 
