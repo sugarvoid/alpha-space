@@ -64,7 +64,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://game/player/player.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": &"StopWatch",
 "language": &"GDScript",
 "path": "res://game/stop_watch/stop_watch.gd"

@@ -42,7 +42,7 @@ func _ready() -> void:
 	_add_pos_to_inner_array()
 	_add_pos_to_outer_array()
 	_remove_pos_nodes()	
-	add_meteor_to_screen(1)
+
 
 
 func new_round(meteors: int) -> void:

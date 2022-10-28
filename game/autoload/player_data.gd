@@ -2,6 +2,7 @@ extends Node
 
 
 var completed_daily_run: bool 
+var time_taken: float 
 
 
 # Called when the node enters the scene tree for the first time.

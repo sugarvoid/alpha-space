@@ -133,3 +133,4 @@ texture_pressed = SubResource("AtlasTexture_pq6hu")
 texture_hover = SubResource("AtlasTexture_c27ci")
 
 [connection signal="pressed" from="btn_Start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="btn_DailyRun" to="." method="_on_btn_daily_run_pressed"]

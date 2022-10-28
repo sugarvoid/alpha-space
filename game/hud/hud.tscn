@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0a3mb224mr5y"]
+[gd_scene load_steps=9 format=3 uid="uid://b0a3mb224mr5y"]
 
 [ext_resource type="Script" path="res://game/hud/hud.gd" id="1_as7ch"]
 [ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://game/hud/fps_counter.tscn" id="1_gud07"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="2_ppuhu"]
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="2_sfbpq"]
+[ext_resource type="PackedScene" uid="uid://ca3t4hrh3lidq" path="res://game/stop_watch/stop_watch.tscn" id="5_ki7tv"]
+[ext_resource type="Texture2D" uid="uid://dkrdxcjh8vp8u" path="res://game/corkpit/TMP_submit_button.png" id="6_ky66g"]
 
 [sub_resource type="Animation" id="Animation_vojmu"]
 resource_name = "show_score"
@@ -115,6 +117,7 @@ offset_bottom = 366.0
 metadata/_edit_group_ = true
 
 [node name="lbl_Name" type="Label" parent="SeedInfo"]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 252.0
 offset_right = 183.0
@@ -122,8 +125,29 @@ offset_bottom = 278.0
 text = "seddd na"
 
 [node name="lbl_Name2" type="Label" parent="SeedInfo"]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 252.0
 offset_right = 108.0
 offset_bottom = 278.0
 text = "Seed:"
+
+[node name="StopWatch" parent="." instance=ExtResource("5_ki7tv")]
+position = Vector2(126, 422)
+rotation = -0.232129
+skew = -0.200713
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 429.0
+offset_top = 415.0
+offset_right = 609.0
+offset_bottom = 455.0
+texture = ExtResource("6_ky66g")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 6.0
+offset_right = 111.0
+offset_bottom = 32.0
+text = "SUBMIT"

@@ -21,5 +21,10 @@ func _on_btn_start_pressed():
 	_start_game()
 
 func _start_game() -> void:
-	Seeder.set_seed($txt_Seed.text)
+	#TODO: Get random seed from seed list 
 	get_tree().change_scene_to_file("res://game/game.tscn")
+
+
+func _on_btn_daily_run_pressed() -> void:
+	Seeder.set_seed($txt_Seed.text)
+	_start_game()

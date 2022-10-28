@@ -14,31 +14,33 @@ signal on_word_submit
 @onready var slot_1: BankSlot = get_node("LetterBank/Slots/BankSlot1")
 @onready var slot_2: BankSlot = get_node("LetterBank/Slots/BankSlot2")
 
-enum STATES {
-	
-}
-
+const STARTING_DISTANCE: int = 50
 
 var meteors_per_round: int = 5
 var round: int 
-var state: STATES
+
 var can_player_fire: bool = true
 var typed_letters: Array = []
 var pizza = load("res://game/pizza_cursor.png")
 
-var _distance_to_goal: int = 100
+var _distance_to_goal: int
 
 
 func _ready() -> void:
+	
+	self._distance_to_goal = STARTING_DISTANCE
+	_update_dis_to_goal_label()
+	
 	self.word_manager.load_words_from_file()
 	self.hud.update_distance_left_label(self._distance_to_goal)
 	Input.set_custom_mouse_cursor(pizza)
 	self._connect_signals()
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.start(0.01)
+	timer.start(5.01)
 	await timer.timeout
 	timer.queue_free()
+	self._start_game()
 	self._new_round()
 
 
@@ -48,6 +50,10 @@ func _process(delta: float) -> void:
 func _new_round() -> void:
 	self.round += 1
 	self.meteor_manager.new_round(self.meteors_per_round)
+
+func _start_game() -> void:
+	
+	self.hud.start_stopwatch()
 
 func _unhandled_input(event) -> void:
 	
@@ -97,7 +103,7 @@ func _submit_word() -> void:
 		$aud_Correct.play()
 		self.hud.play_score_animation(word_manager.get_running_score())
 		self._lower_distance_left(self.word_manager.get_running_score())
-		self.hud.update_distance_left_label(self._distance_to_goal)
+		_update_dis_to_goal_label()
 	else:
 		# TODO: Remove me!
 		# take a life????
@@ -106,6 +112,9 @@ func _submit_word() -> void:
 	
 	self.word_manager.reset_values()
 	self.hud
+
+func _update_dis_to_goal_label() -> void:
+	self.hud.update_distance_left_label(self._distance_to_goal)
 
 func _shoot_laser(array_slot: int) -> void:
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):
@@ -123,6 +132,16 @@ func _shoot_laser(array_slot: int) -> void:
 
 func _lower_distance_left(value: int) -> void:
 	self._distance_to_goal -= value
+	clamp(self._distance_to_goal, 0, STARTING_DISTANCE)
+	
+	if self._distance_to_goal == 0:
+		pass
+		#GAME IS OVER
+		# stop the stopwatch
+		# get time from hud
+		# send that time to player_data
+		# go to game over screen 
+	
 	# TODO: If this reaches zero, game won
 	
 
@@ -130,5 +149,5 @@ func _on_enter_button_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == 1:
 			self._submit_word()
-		else:
-			pass
+	else:
+		pass

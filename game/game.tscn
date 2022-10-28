@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bvvbc1ken5fys" path="res://game/letter_bank/letter_bank.tscn" id="11_8el8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s02g2"]
-size = Vector2(102, 36)
+size = Vector2(179, 36)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8vr4e")
@@ -42,8 +42,10 @@ autoplay = true
 [node name="EnterButton" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterButton"]
-position = Vector2(670, 434)
+position = Vector2(519.5, 433)
 shape = SubResource("RectangleShape2D_s02g2")
 
 [node name="aud_Correct" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_8cnsc")
+
+[connection signal="input_event" from="EnterButton" to="." method="_on_enter_button_input_event"]

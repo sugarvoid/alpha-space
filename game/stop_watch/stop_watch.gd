@@ -1,7 +1,7 @@
 class_name StopWatch
-extends Node
+extends Node2D
 
-var is_running: bool = true
+var is_running: bool
 var _elapsed: float
 
 # Called when the node enters the scene tree for the first time.
