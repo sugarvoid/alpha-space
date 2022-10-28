@@ -21,9 +21,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-
-
-
 func add_letter_to_bank(letter: String) -> void:
 	for slot in $Slots.get_children():
 		

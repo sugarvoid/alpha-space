@@ -4,7 +4,6 @@ extends Node2D
 signal on_word_submit
 
 @onready var fps_label: Control = get_node("HUD/FPSCounter")
-
 @onready var word_manager: WordManager = load("res://game/manager/word_manager.gd").new()
 @onready var meteor_manager: MeteorManager = get_node("MeteorManager")
 @onready var laser_manager: LaserManager = get_node("LaserManager")
@@ -14,23 +13,19 @@ signal on_word_submit
 @onready var slot_1: BankSlot = get_node("LetterBank/Slots/BankSlot1")
 @onready var slot_2: BankSlot = get_node("LetterBank/Slots/BankSlot2")
 
-const STARTING_DISTANCE: int = 50
+const STARTING_DISTANCE: int = 5
 
 var meteors_per_round: int = 5
 var round: int 
-
 var can_player_fire: bool = true
 var typed_letters: Array = []
 var pizza = load("res://game/pizza_cursor.png")
-
 var _distance_to_goal: int
 
 
 func _ready() -> void:
-	
 	self._distance_to_goal = STARTING_DISTANCE
 	_update_dis_to_goal_label()
-	
 	self.word_manager.load_words_from_file()
 	self.hud.update_distance_left_label(self._distance_to_goal)
 	Input.set_custom_mouse_cursor(pizza)
@@ -47,13 +42,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	fps_label.update_label(Engine.get_frames_per_second())
 
+
 func _new_round() -> void:
 	self.round += 1
 	self.meteor_manager.new_round(self.meteors_per_round)
 
+
 func _start_game() -> void:
-	
 	self.hud.start_stopwatch()
+
 
 func _unhandled_input(event) -> void:
 	
@@ -90,10 +87,11 @@ func _connect_signals() -> void:
 	self.letter_bank.on_valid_store.connect(self._letter_selected)
 	#### self.hand_sprite.press_animation_finished.connect()
 	self.word_manager.on_running_word_update.connect(self.hud.update_word_label)
-	
+
 
 func _letter_selected(_m: String) -> void:
 	self._new_round()
+
 
 func _submit_word() -> void:
 	if self.word_manager.check_if_word_is_vaild():
@@ -113,8 +111,10 @@ func _submit_word() -> void:
 	self.word_manager.reset_values()
 	self.hud
 
+
 func _update_dis_to_goal_label() -> void:
 	self.hud.update_distance_left_label(self._distance_to_goal)
+
 
 func _shoot_laser(array_slot: int) -> void:
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):
@@ -124,11 +124,24 @@ func _shoot_laser(array_slot: int) -> void:
 		var target_pos: Vector2 = targeted_meteor.global_position
 		self.laser_manager.add_lasers_to_screen(target_pos)
 		self.meteor_manager.remove_meteor(targeted_meteor)
-
 	else:
 		# no meteor in that spot
 		return
+
+
+func _game_over() -> void:
+	# stop the stopwatch
+	self.hud.stop_stopwatch()
 	
+	# get time from hud
+	var player_time: float = self.hud.get_stopwatch_time()
+	
+	# send that time to player_data
+	PlayerData.set_time(player_time)
+	
+	# go to game over screen 
+	get_tree().change_scene_to_file("res://game/screen/gameover_screen/gameover_screen.tscn")
+
 
 func _lower_distance_left(value: int) -> void:
 	self._distance_to_goal -= value
@@ -136,14 +149,12 @@ func _lower_distance_left(value: int) -> void:
 	
 	if self._distance_to_goal == 0:
 		pass
-		#GAME IS OVER
-		# stop the stopwatch
-		# get time from hud
-		# send that time to player_data
-		# go to game over screen 
+		
+		self._game_over()
+		
 	
 	# TODO: If this reaches zero, game won
-	
+
 
 func _on_enter_button_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():

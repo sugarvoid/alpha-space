@@ -1,12 +1,11 @@
 class_name LetterSquare
 extends Node2D
 
+@onready var lbl_letter: Label = get_node("Label")
 
 #TODO: CHANGE TO RIGHT SHADE OF WHITE
 const DEFAULT_COLOR: Color = Color.WHITE_SMOKE
 const HOVER_COLOR: Color = Color.GOLD
-
-@onready var lbl_letter: Label = get_node("Label")
 
 
 var letter: String

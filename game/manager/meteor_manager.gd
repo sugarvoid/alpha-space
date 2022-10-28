@@ -64,7 +64,6 @@ func _meteor_stored(m: Meteor) -> void:
 
 
 func _get_random_letter() -> String:
-
 	return self.LETTERS[randi() % LETTERS.size()]
 
 
@@ -82,19 +81,23 @@ func remove_meteor(meteor: Meteor) -> void:
 	
 	#self.add_child(explosion)
 
+
 func _spawn_meteors(amount: int) -> void:
 	var slot_options: Array[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 	slot_options.shuffle()
 	for i in amount:
 		self.add_meteor_to_screen(slot_options.pop_front())
 
+
 func show_current_letters() -> void:
 	for m in self.current_meteors:
 		print(m.letter)
 
+
 func check_if_slot_has_meteor(slot: int) -> bool:
 	print(current_meteors)
 	return is_instance_valid(current_meteors[slot])## current_meteors[slot] != null
+
 
 func _resize_arrays() -> void:
 	self.current_meteors.resize(9)
