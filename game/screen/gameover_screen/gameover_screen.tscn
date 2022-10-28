@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2kk540pry5qk"]
+[gd_scene load_steps=3 format=3 uid="uid://c2kk540pry5qk"]
 
 [ext_resource type="Texture2D" uid="uid://bfdlhu1guih3h" path="res://game/screen/gameover_screen/gameover_screen.png" id="1_f0xmc"]
+[ext_resource type="Script" path="res://game/screen/gameover_screen/gameover_screen.gd" id="1_tr1r3"]
 
 [node name="gameover_screen" type="Control"]
 layout_mode = 3
@@ -9,8 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tr1r3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_f0xmc")

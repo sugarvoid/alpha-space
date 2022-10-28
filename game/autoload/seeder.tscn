@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://game/autoload/Seeder.gd" id="1_qjuob"]
+[ext_resource type="Script" path="res://game/autoload/seeder.gd" id="1_qjuob"]
 
 [node name="Seeder" type="Node"]
 script = ExtResource("1_qjuob")

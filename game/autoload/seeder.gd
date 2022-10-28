@@ -3,6 +3,7 @@ extends Node
 
 var seed_name: String
 
+# TODO: add daily seed
 
 func set_seed(s: String) -> void:
 	seed_name = s

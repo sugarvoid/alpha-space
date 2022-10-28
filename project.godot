@@ -99,7 +99,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Seeder="*res://game/autoload/Seeder.gd"
+Seeder="*res://game/autoload/seeder.gd"
 
 [display]
 
