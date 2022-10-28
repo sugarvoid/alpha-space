@@ -145,10 +145,10 @@ func _game_over() -> void:
 
 func _lower_distance_left(value: int) -> void:
 	self._distance_to_goal -= value
-	clamp(self._distance_to_goal, 0, STARTING_DISTANCE)
+	self._distance_to_goal = clamp(self._distance_to_goal, 0, STARTING_DISTANCE)
+	print(_distance_to_goal)
 	
 	if self._distance_to_goal == 0:
-		pass
 		
 		self._game_over()
 		
