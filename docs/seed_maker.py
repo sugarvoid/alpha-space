@@ -16,10 +16,10 @@ def random_with_N_digits(n):
     return randint(range_start, range_end)
 
 def get_three_letters(): 
-    return "".join(choices(ascii_lowercase, k=3))
+    return "".join(choices(ascii_lowercase, k=4))
 
 def get_new_seed()-> str:
-    return (f"{random_with_N_digits(3)}{get_three_letters()}")
+    return (f"{random_with_N_digits(4)}{get_three_letters()}")
 
 def add_day():
     pass
@@ -28,16 +28,26 @@ def add_day():
 
 
 def export_to_file(json_s):
-    with open("out_put.json", "w") as outfile:
+    with open("random_seeds.json", "w") as outfile:
         outfile.write(json_s)
 
 
-s = SeedObject('2022-12-22', '123aaa')
+# s = SeedObject('2022-12-22', '123aaa')
 
 
+def make_year_of_seeds():
 
+    day = datetime.now(timezone.utc)
 
-data = [ ]
+    for i in range(356):
+        date = day.strftime("%Y-%m-%d")
+        seed = get_new_seed()
+
+        s = SeedObject(date, seed)
+        add_seed_to_list(s)
+
+        day = day + timedelta(days=1)
+    print('done')
 
 
 def add_seed_to_list(s: SeedObject):
@@ -46,19 +56,26 @@ def add_seed_to_list(s: SeedObject):
         'Seed': s.seed,
     },)
 
+def make_rand_seed_array():
+    for i in range(200):
+        rand_seeds.append(get_new_seed())
 
-for x in range(10):
-     print(f"{random_with_N_digits(3)}{get_three_letters()}")
+# for x in range(10):
+#      print(f"{random_with_N_digits(3)}{get_three_letters()}")
 
-unix_date = datetime.now(timezone.utc) + timedelta(days=1)
+#unix_date = datetime.now(timezone.utc) + timedelta(days=1)
 #unix_date = datetime.utcfromtimestamp(unix_time).strftime('%Y-%m-%d')
 
-print("unix time is", unix_date.strftime("%Y-%m-%d"))
+#print("unix time is", unix_date.strftime("%Y-%m-%d"))
 
-jsonString = json.dumps(data, indent=4)
+data = [ ]
+rand_seeds = []
 
+make_rand_seed_array()
+# make_year_of_seeds()
 
-
-
+jsonString = json.dumps(rand_seeds, indent=4)
 export_to_file(jsonString)
 
+
+print(data)
