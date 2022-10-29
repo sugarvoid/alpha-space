@@ -7,6 +7,8 @@ extends Control
 @onready var lbl_time: Label = get_node("Results/Time/lbl_time")
 @onready var lbl_seed_name: Label = get_node("Results/Seed/lbl_seed_name")
 
+const  p_WordLine = preload("res://game/screen/gameover_screen/word_line.tscn")
+
 
 func _ready():
 	# set seed label
@@ -15,12 +17,19 @@ func _ready():
 	
 	# set time label
 	var player_time: float = snapped(PlayerData.get_time(), 0.10)
-	self.lbl_time.text = str(snapped(PlayerData.get_time(), 0.1))
+	self.lbl_time.text = str(PlayerData.time_string)
 	
 	var unix_time = Time.get_unix_time_from_system()
 	print(Time.get_date_string_from_unix_time(unix_time))
-	pass # Replace with function body.
+	_fill_word_list()
 
+
+func _fill_word_list() -> void:
+	for w in PlayerData.word_list:
+		var new_line: WordLine = p_WordLine.instantiate()
+		new_line.set_up_line(w.word, w.score)
+		$VBoxContainer/WordListScroll/WordList.add_child(new_line)
+		
 
 func _show_leaderboard() -> void:
 	pass

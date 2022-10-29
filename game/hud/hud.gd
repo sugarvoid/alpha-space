@@ -42,3 +42,6 @@ func stop_stopwatch() -> void:
 
 func get_stopwatch_time() -> float:
 	return self._stopwatch.get_time_elaspsed()
+
+func get_stopwatch_string() -> String:
+	return self._stopwatch.get_elaspsed_string()

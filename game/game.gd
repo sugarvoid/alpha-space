@@ -102,6 +102,13 @@ func _submit_word() -> void:
 		self.hud.play_score_animation(word_manager.get_running_score())
 		self._lower_distance_left(self.word_manager.get_running_score())
 		_update_dis_to_goal_label()
+		#####
+		var good_word: WordObject = WordObject.new()
+		good_word.word = word_manager.running_word
+		good_word.score = word_manager.get_running_score()
+		PlayerData.word_list.append(good_word)
+		#####
+		
 	else:
 		# TODO: Remove me!
 		# take a life????
@@ -135,6 +142,7 @@ func _game_over() -> void:
 	
 	# get time from hud
 	var player_time: float = self.hud.get_stopwatch_time()
+	PlayerData.time_string = self.hud.get_stopwatch_string()
 	
 	# send that time to player_data
 	PlayerData.set_time(player_time)

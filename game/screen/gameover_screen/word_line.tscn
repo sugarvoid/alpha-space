@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2uxk62ef7x6n"]
+
+[ext_resource type="Script" path="res://game/screen/gameover_screen/word_line.gd" id="1_8nbeu"]
+
+[node name="WordLine" type="HBoxContainer"]
+offset_right = 130.0
+offset_bottom = 26.0
+script = ExtResource("1_8nbeu")
+
+[node name="lbl_word" type="Label" parent="."]
+offset_right = 63.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "Word 1"
+horizontal_alignment = 1
+
+[node name="lbl_score" type="Label" parent="."]
+offset_left = 67.0
+offset_right = 130.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "8"
+horizontal_alignment = 1
