@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0a3mb224mr5y"]
+[gd_scene load_steps=25 format=3 uid="uid://b0a3mb224mr5y"]
 
 [ext_resource type="Script" path="res://game/hud/hud.gd" id="1_as7ch"]
 [ext_resource type="PackedScene" uid="uid://b43yhcx7q06cy" path="res://game/hud/fps_counter.tscn" id="1_gud07"]
+[ext_resource type="Texture2D" uid="uid://bvea1ar0xujhj" path="res://game/corkpit/temp_static.png" id="2_kgtck"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="2_ppuhu"]
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="2_sfbpq"]
 [ext_resource type="PackedScene" uid="uid://ca3t4hrh3lidq" path="res://game/stop_watch/stop_watch.tscn" id="5_ki7tv"]
@@ -39,10 +40,72 @@ _data = {
 "show_score": SubResource("Animation_vojmu")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh3mx"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(0, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4xlc"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(1024, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4etrk"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(2048, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clxkx"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(3072, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl4bo"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(4096, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgipm"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(5120, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cblw"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(6144, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33agv"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(7168, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b5wi"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(8192, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1t3m"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(9216, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab4fc"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(10240, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhnkr"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(11264, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01tb1"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(12288, 0, 1024, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwf6x"]
+atlas = ExtResource("2_kgtck")
+region = Rect2(13312, 0, 1024, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4del"]
+animations = [{
+"frames": [SubResource("AtlasTexture_hh3mx"), SubResource("AtlasTexture_q4xlc"), SubResource("AtlasTexture_4etrk"), SubResource("AtlasTexture_clxkx"), SubResource("AtlasTexture_pl4bo"), SubResource("AtlasTexture_hgipm"), SubResource("AtlasTexture_3cblw"), SubResource("AtlasTexture_33agv"), SubResource("AtlasTexture_8b5wi"), SubResource("AtlasTexture_f1t3m"), SubResource("AtlasTexture_ab4fc"), SubResource("AtlasTexture_hhnkr"), SubResource("AtlasTexture_01tb1"), SubResource("AtlasTexture_fwf6x")],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_as7ch")
-
-[node name="DashStatic" type="Sprite2D" parent="."]
 
 [node name="MouseBlocker" type="Control" parent="."]
 layout_mode = 3
@@ -131,7 +194,7 @@ offset_bottom = 278.0
 text = "Seed:"
 
 [node name="StopWatch" parent="." instance=ExtResource("5_ki7tv")]
-position = Vector2(126, 422)
+position = Vector2(72, 432)
 rotation = -0.232129
 skew = -0.200713
 
@@ -148,3 +211,9 @@ offset_top = 6.0
 offset_right = 111.0
 offset_bottom = 32.0
 text = "SUBMIT"
+
+[node name="DashStatic" type="AnimatedSprite2D" parent="."]
+visible = false
+frames = SubResource("SpriteFrames_r4del")
+playing = true
+centered = false

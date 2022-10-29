@@ -9,12 +9,23 @@ extends CanvasLayer
 
 func _ready() -> void:
 	_lbl_running_word.text = ""
+	$DashStatic.visible = false
 	$SeedInfo/lbl_Name.text = Seeder.seed_name
 
 
 func _process(delta: float) -> void:
 	pass
 
+func disable_mouse_input() -> void:
+	self._block_all_mouse_inputs()
+	$DashStatic.visible = true
+	var timer: Timer = Timer.new()
+	add_child(timer)
+	timer.start(4.0)
+	await timer.timeout
+	timer.queue_free()
+	self._allow_mouse_inputs()
+	$DashStatic.visible = false
 
 func update_word_label(word: String) -> void:
 	print('in hud word fuc')
@@ -28,10 +39,10 @@ func play_score_animation(number: int) -> void:
 	$Score/Label.text = str(number)
 	self._aniply.play("show_score")
 
-func block_all_mouse_inputs() -> void:
+func _block_all_mouse_inputs() -> void:
 	$MouseBlocker.set_mouse_filter(0)
 
-func allow_mouse_inputs() -> void:
+func _allow_mouse_inputs() -> void:
 	$MouseBlocker.set_mouse_filter(2)
 
 func start_stopwatch() -> void:

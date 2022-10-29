@@ -19,8 +19,7 @@ func _ready():
 	var player_time: float = snapped(PlayerData.get_time(), 0.10)
 	self.lbl_time.text = str(PlayerData.time_string)
 	
-	var unix_time = Time.get_unix_time_from_system()
-	print(Time.get_date_string_from_unix_time(unix_time))
+	
 	_fill_word_list()
 
 

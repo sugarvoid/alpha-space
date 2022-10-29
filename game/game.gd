@@ -13,7 +13,7 @@ signal on_word_submit
 @onready var slot_1: BankSlot = get_node("LetterBank/Slots/BankSlot1")
 @onready var slot_2: BankSlot = get_node("LetterBank/Slots/BankSlot2")
 
-const STARTING_DISTANCE: int = 5
+const STARTING_DISTANCE: int = 50
 
 var meteors_per_round: int = 5
 var round: int 
@@ -94,6 +94,10 @@ func _letter_selected(_m: String) -> void:
 
 
 func _submit_word() -> void:
+	
+	if self.word_manager.running_word == "":
+		return
+	
 	if self.word_manager.check_if_word_is_vaild():
 		# TODO: Remove me!
 		print(str(word_manager.running_word), ' is a vaild word')
@@ -112,6 +116,7 @@ func _submit_word() -> void:
 	else:
 		# TODO: Remove me!
 		# take a life????
+		self.hud.disable_mouse_input()
 		print(str(word_manager.running_word), ' is not a vaild word')
 		
 	
