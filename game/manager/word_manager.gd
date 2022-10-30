@@ -6,10 +6,9 @@ signal word_is_valid
 signal word_is_not_valid
 
 
-const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+## const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 var letter_bank: Array[LetterSquare]
-
 var typed_word: Array[String]
 var running_word: String
 var _running_score: int
@@ -26,7 +25,7 @@ func load_words_from_file() -> void:
 		var file = FileAccess.open(path, FileAccess.READ)
 		while not file.eof_reached():
 			var line = file.get_line()
-			VALID_WORDS.append(line)
+			self.VALID_WORDS.append(line)
 
 
 func get_letter_vaule(letter: String) -> int:
@@ -49,10 +48,8 @@ func get_letter_vaule(letter: String) -> int:
 
 func add_letter(letter: String) -> void:
 	# Rename to add_letter_to_running_word
-	# add points based on letter
 	self._running_score += self.get_letter_vaule(letter)
 	self.typed_word.append(letter)
-	
 	self._update_running_word()
 	
 	# Let hud know to update word label

@@ -16,7 +16,3 @@ func set_up_line(word: String, score: int) -> void:
 func _ready():
 	self.lbl_score.text = str(self.score)
 	self.lbl_word.text = self.word
-
-
-func _process(delta):
-	pass

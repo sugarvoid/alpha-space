@@ -4,4 +4,3 @@ extends RefCounted
 var word: String
 var score: int
 
-

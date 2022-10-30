@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 
 func add_letter_to_bank(letter: String) -> void:
 	for slot in $Slots.get_children():
-		
 		if slot.is_open:
 			print("HEELOOOOOO!!!")
 			slot.add_letter(letter)

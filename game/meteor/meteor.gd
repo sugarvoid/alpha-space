@@ -1,7 +1,7 @@
 class_name  Meteor
 extends Node2D
 
-signal was_shot(m: Meteor)
+signal was_shot
 signal was_stored
 
 @onready var sprite: Sprite2D = get_node("Sprite2D")
@@ -47,24 +47,6 @@ func _update_label() -> void:
 
 func get_current_scale() -> Vector2:
 	return self.scale
-
-
-func flip_over() -> void:
-	self.animation_player.play("flip_over")
-	await  self.animation_player.animation_finished
-	
-	$Sprite2D.frame = 1
-
-	self.animation_player.play_backwards("flip_over")
-	await  self.animation_player.animation_finished
-	
-	self.animation_player.play("flip_over")
-	await  self.animation_player.animation_finished
-
-	$Sprite2D.frame = 0
-	
-	self.animation_player.play_backwards("flip_over")
-	await  self.animation_player.animation_finished
 
 
 func _move_to_end_pos() -> void:

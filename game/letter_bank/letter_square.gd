@@ -16,10 +16,8 @@ func _ready() -> void:
 
 
 func change_font_color(color: Color) -> void:
-	#self.lbl_letter.font_color = Color.REBECCA_PURPLE
 	self.lbl_letter.set("theme_override_colors/font_color", color)
 
 
 func set_letter_value(l: String) -> void:
 	self.letter = l
-

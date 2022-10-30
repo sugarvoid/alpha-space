@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyadvv34rt0br"]
+[gd_scene load_steps=9 format=3 uid="uid://cyadvv34rt0br"]
 
-[ext_resource type="Script" path="res://game/meteor/reticle.gd" id="1_sjqkf"]
 [ext_resource type="Texture2D" uid="uid://c2xx2dt2ckyqh" path="res://game/meteor/reticle-Sheet.png" id="2_pjm7r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20cgk"]
@@ -46,7 +45,6 @@ animations = [{
 }]
 
 [node name="Reticle" type="Node2D"]
-script = ExtResource("1_sjqkf")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_1dkwg")

@@ -59,11 +59,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://game/manager/meteor_manager.gd"
 }, {
-"base": "Node",
-"class": &"Player",
-"language": &"GDScript",
-"path": "res://game/player/player.gd"
-}, {
 "base": "Node2D",
 "class": &"StopWatch",
 "language": &"GDScript",
@@ -95,7 +90,6 @@ _global_script_class_icons={
 "LetterSquare": "",
 "Meteor": "",
 "MeteorManager": "",
-"Player": "",
 "StopWatch": "",
 "WordLine": "",
 "WordManager": "",

@@ -5,7 +5,7 @@ var seed_name: String
 var daily_seed: String
 
 
-var daily_seeds: Array = [
+var daily_seeds: Array[Dictionary] = [
 	{
 		"Date": "2022-10-29",
 		"Seed": "8202tpoe"
@@ -1432,7 +1432,7 @@ var daily_seeds: Array = [
 	}
 ]
 
-var random_seeds: Array = [
+var random_seeds: Array[String] = [
 	"1632wdla",
 	"2417csxv",
 	"4481duep",
@@ -1670,5 +1670,3 @@ func get_random_seed() -> String:
 	var seed: String
 	randomize()
 	return self.random_seeds[randi() % random_seeds.size()]
-
-
