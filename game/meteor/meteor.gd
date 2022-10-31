@@ -24,6 +24,7 @@ var rotate_speed: float
 var rotate_dir: int
 var movement_tween_time: float = 1.5
 var value: String
+var storage_point: Vector2
 
 
 func _ready() -> void:
@@ -55,6 +56,12 @@ func _move_to_end_pos() -> void:
 	await tween.finished
 	self._wobble()
 
+func move_to_pos(pos: Vector2) -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "global_position", pos, 0.8)
+	await tween.finished
+	emit_signal("was_stored", self)
+
 
 func _increase_scale_to_one() -> void:
 	var tween2: Tween = create_tween()
@@ -84,16 +91,10 @@ func _get_ran_rotation_speed() -> float:
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and self.is_clickable:
-		print(event)
-		if event.button_index == 1:
-			print(str(self.slot_number, ' was left clicked, letter is: ', self.letter))
+		if event.button_index == 1: # Left mouse click
 			emit_signal("was_shot", self)
-		elif event.button_index == 2:
-			print(str(self.slot_number, ' was right clicked, letter is: ', self.letter))
+		elif event.button_index == 2: # Right mouse click 
 			emit_signal("was_stored", self)
-		else:
-				## print("Left button was released")
-				pass
 
 
 func _on_area_2d_mouse_entered() -> void:

@@ -13,21 +13,14 @@ var player_bank_size: int = 3
 var banked_letters: Array[String]
 
 
-func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
-	pass
-
-
-func add_letter_to_bank(letter: String) -> void:
-	for slot in $Slots.get_children():
-		if slot.is_open:
-			print("HEELOOOOOO!!!")
-			slot.add_letter(letter)
-			emit_signal("on_valid_store", letter)
-			return
+#
+#func add_letter_to_bank(letter: String) -> void:
+#	for slot in $Slots.get_children():
+#		if slot.is_open:
+#			slot.add_letter(letter)
+#			emit_signal("on_valid_store", letter)
+#			return
+			
 
 
 

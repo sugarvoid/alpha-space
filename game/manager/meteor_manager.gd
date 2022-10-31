@@ -1,14 +1,18 @@
+# Creats, track and remove meteors
+
 class_name  MeteorManager
 extends Node2D
 
 signal meteor_shot
 signal meteor_stored
+
 signal send_shoot
 signal send_save
 
 @onready var inner_node: Node2D = get_node("Inner")
 @onready var outer_node: Node2D = get_node("Outer")
 @onready var meteors: Node = get_node("Meteors")
+@onready var storage_point: Marker2D = get_node("StoragePoint")
 
 @onready var letter_maker: LetterMaker = load("res://game/manager/letter_maker.gd").new()
 
@@ -27,11 +31,15 @@ func add_meteor_to_screen(slot: int) -> void:
 	##meteor.letter = self._get_random_letter()
 	meteor.letter = self.letter_maker.get_letters(1)[0]
 	meteor.slot_number = slot
+	meteor.storage_point = self.storage_point.global_position
 	meteor.start_pos = self.inner_positions[slot]
 	meteor.end_pos = self.outer_positions[slot]
 	self.meteors.add_child(meteor)
+	
+	# Connecting the children
 	meteor.was_shot.connect(_meteor_shot)
 	meteor.was_stored.connect(_meteor_stored)
+	
 	self.current_meteors[slot] = meteor
 	self.current_letters.append(meteor.letter)
 
@@ -57,8 +65,12 @@ func _meteor_shot(m: Meteor) -> void:
 
 func _meteor_stored(m: Meteor) -> void:
 	self.emit_signal("send_save", m.slot_number)
-	self.emit_signal("meteor_stored", m.letter)
+	self.emit_signal("meteor_stored", m)
 
+func move_meteor_to_storage_point(m: Meteor) -> void:
+	print(m)
+	#var meteor: Meteor = self.meteors.find_child(m.name)
+	#meteor.move_to_pos($StoragePoint.global_position)
 
 func _get_random_letter() -> String:
 	return self.LETTERS[randi() % LETTERS.size()]

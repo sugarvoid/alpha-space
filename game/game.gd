@@ -32,7 +32,7 @@ func _ready() -> void:
 	self._connect_signals()
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.start(5.01)
+	timer.start(1.0)
 	await timer.timeout
 	timer.queue_free()
 	self._start_game()
@@ -80,10 +80,12 @@ func _connect_signals() -> void:
 	self.slot_0.on_letter_used.connect(self.word_manager.add_letter)
 	self.slot_1.on_letter_used.connect(self.word_manager.add_letter)
 	self.slot_2.on_letter_used.connect(self.word_manager.add_letter)
+	
 	self.meteor_manager.send_shoot.connect(self._shoot_laser)
-	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
-	self.meteor_manager.meteor_stored.connect(self.letter_bank.add_letter_to_bank)
 	self.meteor_manager.meteor_shot.connect(self._letter_selected)
+	self.meteor_manager.meteor_shot.connect(self.word_manager.add_letter)
+	self.meteor_manager.meteor_stored.connect(self._add_letter_to_bank)
+	
 	self.letter_bank.on_valid_store.connect(self._letter_selected)
 	#### self.hand_sprite.press_animation_finished.connect()
 	self.word_manager.on_running_word_update.connect(self.hud.update_word_label)
@@ -92,9 +94,27 @@ func _connect_signals() -> void:
 func _letter_selected(_m: String) -> void:
 	self._new_round()
 
+func _add_letter_to_bank(m: Meteor) -> void:
+	var open_slot: BankSlot = null
+	for slot in $LetterBank/Slots.get_children():
+		if slot.is_open:
+			open_slot = slot
+	if open_slot != null:
+		self.meteor_manager.move_meteor_to_storage_point(m)
+		open_slot.add_letter(m.letter)
+		self._letter_selected(m.letter)
+	else:
+		print('all slots full')
+
+	"""
+	check to see if there is an ioen slot
+		let meteor_manager know it good
+		add the letter
+		
+	
+	"""
 
 func _submit_word() -> void:
-	
 	if self.word_manager.running_word == "":
 		return
 	

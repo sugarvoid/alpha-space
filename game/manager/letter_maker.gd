@@ -13,7 +13,6 @@ func get_letters(amount: int) -> Array:
 	var output: Array
 	for _n in range(amount):
 		output.append(letters.pop_back())
-	print(self.letters.size())
 	return output
 	
 func set_up() -> void:
