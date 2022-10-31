@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://coq7rqwpbf6rs"]
+[gd_scene load_steps=12 format=3 uid="uid://coq7rqwpbf6rs"]
 
 [ext_resource type="Texture2D" uid="uid://bpfa7asdpbk24" path="res://game/screen/start_screen/start_screen.png" id="1_jfhku"]
 [ext_resource type="Script" path="res://game/screen/start_screen/start_screen.gd" id="1_ustq1"]
 [ext_resource type="AudioStream" uid="uid://cm1gw4072fonv" path="res://game/music/Juhani Junkala [Retro Game Music Pack] Title Screen.ogg" id="2_g8xkf"]
+[ext_resource type="PackedScene" uid="uid://b3wnrigknxqlh" path="res://game/screen/start_screen/planet.tscn" id="3_pfhkv"]
 [ext_resource type="Texture2D" uid="uid://c84l2uxluigab" path="res://game/screen/start_screen/tmp_button.png" id="4_d2ori"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="4_flwk7"]
 
@@ -49,15 +50,20 @@ grow_vertical = 2
 script = ExtResource("1_ustq1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_jfhku")
+
+[node name="planet" parent="." instance=ExtResource("3_pfhkv")]
+position = Vector2(879, 274)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g8xkf")
 volume_db = -16.944
 
 [node name="btn_Start" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 266.0
 offset_right = 696.0
@@ -67,6 +73,7 @@ texture_pressed = SubResource("AtlasTexture_pq6hu")
 texture_hover = SubResource("AtlasTexture_c27ci")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 174.0
 offset_top = 54.0
 offset_right = 854.0
@@ -76,6 +83,7 @@ theme_override_font_sizes/font_size = 128
 text = "ALPHA SPACE"
 
 [node name="lbl_Version" type="Label" parent="."]
+layout_mode = 0
 offset_left = 916.0
 offset_top = 2.0
 offset_right = 1025.0
@@ -83,6 +91,7 @@ offset_bottom = 59.0
 text = "0.1.0"
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 431.0
 offset_top = 294.0
 offset_right = 626.0
@@ -90,6 +99,7 @@ offset_bottom = 348.0
 text = "PLAY"
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 425.0
 offset_top = 404.0
 offset_right = 620.0
@@ -97,6 +107,7 @@ offset_bottom = 458.0
 text = "DAILY RUN"
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 114.0
 offset_top = 438.0
 offset_right = 309.0
@@ -109,12 +120,14 @@ libraries = {
 }
 
 [node name="txt_Seed" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 461.0
 offset_right = 279.0
 offset_bottom = 504.0
 
 [node name="btn_DailyRun" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 333.0
 offset_top = 376.0
 offset_right = 701.0
