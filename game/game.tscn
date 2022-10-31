@@ -29,12 +29,12 @@ scale = Vector2(3, 3)
 
 [node name="LaserManager" parent="." instance=ExtResource("8_05m1i")]
 
+[node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]
+
 [node name="CorkPit" parent="." instance=ExtResource("3_hqsl1")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_efttr")
-
-[node name="MeteorManager" parent="." instance=ExtResource("6_guurn")]
 
 [node name="LetterBank" parent="." instance=ExtResource("11_8el8g")]
 

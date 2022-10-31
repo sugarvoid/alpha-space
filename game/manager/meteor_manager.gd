@@ -26,6 +26,8 @@ var current_letters: Array
 var inner_positions: Array
 var outer_positions: Array
 
+var cloned_meteor: Meteor
+
 func add_meteor_to_screen(slot: int) -> void:
 	var meteor: Meteor = p_Meteor.instantiate()
 	##meteor.letter = self._get_random_letter()
@@ -64,17 +66,40 @@ func _meteor_shot(m: Meteor) -> void:
 
 
 func _meteor_stored(m: Meteor) -> void:
+	
 	self.emit_signal("send_save", m.slot_number)
 	self.emit_signal("meteor_stored", m)
 
 func move_meteor_to_storage_point(m: Meteor) -> void:
-	print(m)
+	self._clone_selected_meteor(m)
+	self.cloned_meteor.move_to_pos(self.storage_point.global_position)
+	
 	#var meteor: Meteor = self.meteors.find_child(m.name)
 	#meteor.move_to_pos($StoragePoint.global_position)
 
 func _get_random_letter() -> String:
 	return self.LETTERS[randi() % LETTERS.size()]
 
+func _clone_selected_meteor(m: Meteor) -> void:
+	# create new meter based on passed in one
+	var clone_meteor: Meteor = p_Meteor.instantiate()
+	# remove Area2d 
+	##clone_meteor.drop_area2d()
+	# place it on top of old meteor
+	clone_meteor.letter = m.letter
+	clone_meteor.is_clone = true
+	clone_meteor.transform = m.transform
+	clone_meteor.global_position = m.global_position
+	
+	self.cloned_meteor = clone_meteor
+	
+	self.add_child(clone_meteor)
+	
+	
+	
+	# new meteor can either move to pos or turn into blow up animation
+	# quere_fre itself
+	pass
 
 func _add_meteor_to_child(child_num: int, meteor: Meteor) -> void:
 	self.meteors.add_child(meteor)

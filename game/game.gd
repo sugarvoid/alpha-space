@@ -110,8 +110,6 @@ func _add_letter_to_bank(m: Meteor) -> void:
 	check to see if there is an ioen slot
 		let meteor_manager know it good
 		add the letter
-		
-	
 	"""
 
 func _submit_word() -> void:

@@ -6,6 +6,7 @@ signal was_stored
 
 @onready var sprite: Sprite2D = get_node("Sprite2D")
 @onready var label: Label = get_node("Control/Label")
+@onready var area_2d: Area2D = get_node("Area2D")
 
 
 const WOBBLE_SIZE: Vector2 = Vector2(0.03,0.03)
@@ -13,6 +14,7 @@ const STARTING_SCALE: Vector2 = Vector2(0.05, 0.05)
 
 
 var rng: RandomNumberGenerator
+var is_clone: bool = false
 var is_hovered: bool 
 var is_hoverable: bool = false
 var is_clickable: bool = false
@@ -28,12 +30,14 @@ var storage_point: Vector2
 
 
 func _ready() -> void:
-	self.global_position = self.start_pos
 	self._update_label()
-	self.sprite.scale = self.STARTING_SCALE
-	self.rotate_speed = self._get_ran_rotation_speed()
-	self._move_to_end_pos()
-	self._increase_scale_to_one()
+	if !self.is_clone:
+		self.global_position = self.start_pos
+		self.sprite.scale = self.STARTING_SCALE
+		self.rotate_speed = self._get_ran_rotation_speed()
+		self._move_to_end_pos()
+		self._increase_scale_to_one()
+	
 
 
 func _process(delta: float) -> void:
@@ -61,7 +65,10 @@ func move_to_pos(pos: Vector2) -> void:
 	tween.tween_property(self, "global_position", pos, 0.8)
 	await tween.finished
 	emit_signal("was_stored", self)
+	self.queue_free()
 
+func drop_area2d() -> void:
+	self.remove_child(self.area_2d)
 
 func _increase_scale_to_one() -> void:
 	var tween2: Tween = create_tween()

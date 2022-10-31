@@ -66,4 +66,4 @@ position = Vector2(503, 250)
 position = Vector2(573, 250)
 
 [node name="StoragePoint" type="Marker2D" parent="."]
-position = Vector2(504, 424)
+position = Vector2(509, 460)
