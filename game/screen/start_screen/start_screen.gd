@@ -6,7 +6,7 @@ extends Control
 
 func _ready() -> void:
 	$AnimationPlayer.play("fade_in_music")
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 
 
 func _on_btn_start_pressed() -> void:

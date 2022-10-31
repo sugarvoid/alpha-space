@@ -10,6 +10,8 @@ signal send_save
 @onready var outer_node: Node2D = get_node("Outer")
 @onready var meteors: Node = get_node("Meteors")
 
+@onready var letter_maker: LetterMaker = load("res://game/manager/letter_maker.gd").new()
+
 
 const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
 const p_Explosion: PackedScene = preload("res://game/meteor/particle_explosion.tscn")
@@ -22,7 +24,8 @@ var outer_positions: Array
 
 func add_meteor_to_screen(slot: int) -> void:
 	var meteor: Meteor = p_Meteor.instantiate()
-	meteor.letter = self._get_random_letter()
+	##meteor.letter = self._get_random_letter()
+	meteor.letter = self.letter_maker.get_letters(1)[0]
 	meteor.slot_number = slot
 	meteor.start_pos = self.inner_positions[slot]
 	meteor.end_pos = self.outer_positions[slot]
@@ -37,7 +40,8 @@ func _ready() -> void:
 	_resize_arrays()
 	_add_pos_to_inner_array()
 	_add_pos_to_outer_array()
-	_remove_pos_nodes()	
+	_remove_pos_nodes()
+	self.letter_maker.set_up()
 
 
 func new_round(meteors: int) -> void:
@@ -75,6 +79,8 @@ func remove_meteor(meteor: Meteor) -> void:
 
 
 func _spawn_meteors(amount: int) -> void:
+
+	
 	var slot_options: Array[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 	slot_options.shuffle()
 	for i in amount:

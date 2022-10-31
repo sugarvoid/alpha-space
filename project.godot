@@ -44,6 +44,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://game/letter_bank/letter_bank.gd"
 }, {
+"base": "RefCounted",
+"class": &"LetterMaker",
+"language": &"GDScript",
+"path": "res://game/manager/letter_maker.gd"
+}, {
 "base": "Node2D",
 "class": &"LetterSquare",
 "language": &"GDScript",
@@ -87,6 +92,7 @@ _global_script_class_icons={
 "Laser": "",
 "LaserManager": "",
 "LetterBank": "",
+"LetterMaker": "",
 "LetterSquare": "",
 "Meteor": "",
 "MeteorManager": "",

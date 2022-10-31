@@ -20,7 +20,7 @@ func get_running_score() -> int:
 
 
 func load_words_from_file() -> void:
-	var path = "res://game/manager/fixed_words.txt"
+	var path = "res://game/data/words.txt"
 	if FileAccess.file_exists(path):
 		var file = FileAccess.open(path, FileAccess.READ)
 		while not file.eof_reached():
