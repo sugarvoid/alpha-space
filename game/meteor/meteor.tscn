@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkeb6tw0exne0"]
 
 [ext_resource type="Script" path="res://game/meteor/meteor.gd" id="1_akqqa"]
-[ext_resource type="Texture2D" uid="uid://bstauo7ogwrkh" path="res://game/meteor/meteor.png" id="2_gy8v2"]
+[ext_resource type="Texture2D" uid="uid://1vh3muhlbnkr" path="res://game/meteor/new_meteor.png" id="2_5ers7"]
 [ext_resource type="FontFile" uid="uid://c701rmv1hbnfl" path="res://game/font/RaccoonSerif-Bold.ttf" id="3_7j8pl"]
 [ext_resource type="PackedScene" uid="uid://cyadvv34rt0br" path="res://game/meteor/reticle.tscn" id="4_l52gy"]
 
@@ -12,7 +12,7 @@ size = Vector2(45, 51)
 script = ExtResource("1_akqqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gy8v2")
+texture = ExtResource("2_5ers7")
 
 [node name="Control" type="Node2D" parent="."]
 
