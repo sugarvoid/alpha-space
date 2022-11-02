@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vxafhpdipfa7"
-path="res://.godot/imported/TEMP_square.png-80d13d6ebd62f5cbde0a039c882b677f.ctex"
+uid="uid://dla83gmyb0hte"
+path="res://.godot/imported/empty_slot.png-9454a59feb022f5fc894627d0a483802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/meteor/TEMP_square.png"
-dest_files=["res://.godot/imported/TEMP_square.png-80d13d6ebd62f5cbde0a039c882b677f.ctex"]
+source_file="res://game/letter_bank/empty_slot.png"
+dest_files=["res://.godot/imported/empty_slot.png-9454a59feb022f5fc894627d0a483802.ctex"]
 
 [params]
 
