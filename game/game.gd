@@ -52,7 +52,7 @@ func _start_game() -> void:
 	self.hud.start_stopwatch()
 
 
-func _unhandled_input(event) -> void:
+func _input(event) -> void:
 	
 	if event is InputEventKey and event.is_pressed():
 		if event.keycode == 4194309:
@@ -61,15 +61,15 @@ func _unhandled_input(event) -> void:
 			# start next round
 			
 			
-		var key_typed = OS.get_keycode_string(event.keycode).to_lower()
-		# if key_typed is a letter -> then do stuff
-		if self.word_manager.LETTERS.has(key_typed):
-			if self.meteor_manager.current_letters.has(key_typed):
-				print('MATCH!')
-			else:
-				print("NOT HERE!")
-		else:
-			return
+#		var key_typed = OS.get_keycode_string(event.keycode).to_lower()
+#		# if key_typed is a letter -> then do stuff
+#		if self.word_manager.LETTERS.has(key_typed):
+#			if self.meteor_manager.current_letters.has(key_typed):
+#				print('MATCH!')
+#			else:
+#				print("NOT HERE!")
+#		else:
+#			return
 		# else ignore 
 		# get the meteor that has that letter
 		# then get its slot location 
