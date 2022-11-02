@@ -64,10 +64,10 @@ volume_db = -16.944
 
 [node name="btn_Start" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 328.0
-offset_top = 266.0
-offset_right = 696.0
-offset_bottom = 412.0
+offset_left = 336.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 402.0
 texture_normal = SubResource("AtlasTexture_asrrk")
 texture_pressed = SubResource("AtlasTexture_pq6hu")
 texture_hover = SubResource("AtlasTexture_c27ci")
@@ -92,10 +92,10 @@ text = "0.1.0"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 294.0
-offset_right = 626.0
-offset_bottom = 348.0
+offset_left = 432.0
+offset_top = 280.0
+offset_right = 627.0
+offset_bottom = 334.0
 text = "PLAY"
 
 [node name="Label4" type="Label" parent="."]
@@ -108,11 +108,12 @@ text = "DAILY RUN"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 438.0
-offset_right = 309.0
-offset_bottom = 492.0
+offset_left = 112.0
+offset_top = 432.0
+offset_right = 280.0
+offset_bottom = 458.0
 text = "Enter Seed"
+horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -122,15 +123,15 @@ libraries = {
 [node name="txt_Seed" type="TextEdit" parent="."]
 layout_mode = 0
 offset_left = 112.0
-offset_top = 461.0
+offset_top = 464.0
 offset_right = 279.0
-offset_bottom = 504.0
+offset_bottom = 507.0
 
 [node name="btn_DailyRun" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 333.0
+offset_left = 336.0
 offset_top = 376.0
-offset_right = 701.0
+offset_right = 704.0
 offset_bottom = 522.0
 texture_normal = SubResource("AtlasTexture_asrrk")
 texture_pressed = SubResource("AtlasTexture_pq6hu")

@@ -6,11 +6,13 @@ extends Control
 # Add daily leaderboard  
 @onready var lbl_time: Label = get_node("Results/Time/lbl_time")
 @onready var lbl_seed_name: Label = get_node("Results/Seed/lbl_seed_name")
+@onready var _btn_main_menu: Button = get_node("btn_MainMenu")
 
 const  p_WordLine = preload("res://game/screen/gameover_screen/word_line.tscn")
 
 
 func _ready():
+	self._btn_main_menu.pressed.connect(self._go_to_main_menu)
 	# set seed label
 	var seed_name: String = Seeder.seed_name
 	self.lbl_seed_name.text = seed_name
@@ -73,3 +75,6 @@ func _float_to_min(seconds: float) -> String:
 
 	# print the result
 	return (result_string)
+
+func _go_to_main_menu() -> void:
+	get_tree().change_scene_to_file("res://game/screen/start_screen/start_screen.tscn")
