@@ -104,7 +104,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="NumPad"
+config/name="Alpha Space"
 run/main_scene="res://game/screen/start_screen/start_screen.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
