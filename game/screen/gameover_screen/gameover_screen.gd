@@ -36,9 +36,6 @@ func _show_leaderboard() -> void:
 	pass
 	
 func _float_to_min(seconds: float) -> String:
-	# get your time and place it in a variable. We'll use
-# the variable below for an example
-
 
 # we need a variable to know how many
 # minutes we have. We'll reuse time_in_seconds

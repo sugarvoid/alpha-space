@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4dfd018amcxg"]
-
-[ext_resource type="Script" path="res://button_reader.gd" id="1_8eie2"]
-
-[node name="ButtonReader" type="Node"]
-script = ExtResource("1_8eie2")
