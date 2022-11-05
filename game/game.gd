@@ -13,7 +13,7 @@ signal on_word_submit
 @onready var slot_1: BankSlot = get_node("LetterBank/Slots/BankSlot1")
 @onready var slot_2: BankSlot = get_node("LetterBank/Slots/BankSlot2")
 
-const STARTING_DISTANCE: int = 50
+const STARTING_DISTANCE: int = 5
 
 var meteors_per_round: int = 5
 var round: int 
