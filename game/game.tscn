@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://cirfqsuo2yran"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_8vr4e"]
-[ext_resource type="PackedScene" path="res://game/key_reader/button_reader.tscn" id="2_75r16"]
-[ext_resource type="PackedScene" uid="uid://b0a3mb224mr5y" path="res://game/hud/hud.tscn" id="3_cdh64"]
+[ext_resource type="PackedScene" uid="uid://bx8lmtgf5mbd5" path="res://game/game_resetter/game_resetter.tscn" id="2_8ovr5"]
+[ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="2_mivcc"]
+[ext_resource type="PackedScene" uid="uid://b0a3mb224mr5y" path="res://game/hud/hud.tscn" id="2_qilst"]
 [ext_resource type="PackedScene" uid="uid://v2iwiqck83oo" path="res://game/corkpit/cork_pit.tscn" id="3_hqsl1"]
 [ext_resource type="PackedScene" uid="uid://c1ajj7sdaryad" path="res://game/star_field/star_field.tscn" id="4_onjy1"]
-[ext_resource type="PackedScene" uid="uid://chwyx6msikv4k" path="res://game/space_back_ground.tscn" id="5_cw3rp"]
 [ext_resource type="PackedScene" uid="uid://cwawxlnt8lk1l" path="res://game/manager/meteor_manager.tscn" id="6_guurn"]
 [ext_resource type="AudioStream" uid="uid://807lqkfqu545" path="res://game/music/Neon Night - Free CCA Synthwave Music For Games.ogg" id="7_efttr"]
 [ext_resource type="PackedScene" uid="uid://blypbjnijctbi" path="res://game/manager/laser_manager.tscn" id="8_05m1i"]
@@ -18,13 +18,11 @@ size = Vector2(179, 36)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8vr4e")
 
-[node name="ButtonReader" parent="." instance=ExtResource("2_75r16")]
+[node name="SpaceBackGround" parent="." instance=ExtResource("2_mivcc")]
 
-[node name="HUD" parent="." instance=ExtResource("3_cdh64")]
+[node name="HUD" parent="." instance=ExtResource("2_qilst")]
 
-[node name="SpaceBackGround" parent="." instance=ExtResource("5_cw3rp")]
-position = Vector2(-7, 2)
-scale = Vector2(1.72833, 0.977)
+[node name="GameResetter" parent="." instance=ExtResource("2_8ovr5")]
 
 [node name="StarField" parent="." instance=ExtResource("4_onjy1")]
 position = Vector2(499, 181)

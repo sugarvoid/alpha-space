@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx8lmtgf5mbd5"]
+
+[ext_resource type="Script" path="res://game/game_resetter/game_resetter.gd" id="1_041w4"]
+
+[node name="GameResetter" type="Node"]
+script = ExtResource("1_041w4")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 808.0
+offset_top = 568.0
+offset_right = 936.0
+offset_bottom = 594.0
+text = "Hold R to restart"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
