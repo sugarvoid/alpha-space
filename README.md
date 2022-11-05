@@ -12,6 +12,7 @@ Use the random letters to make words
 | ----------| ---------|
 |Left Click | Select Letter|
 |Right Click | Store Letter|
+|Hold R      | Return to Main Menu|
 
 
 ## Credits
