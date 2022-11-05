@@ -1,6 +1,8 @@
 
 # Alpha Space
 
+![](https://github.com/sugarvoid/alpha-space/tree/master/docs/gameplay.gif)
+
 ## Goal
 Use the random letters to make words
 
