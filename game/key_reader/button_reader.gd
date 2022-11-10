@@ -16,7 +16,7 @@ func _reset_game() -> void:
 		return
 	var timer: Timer = Timer.new()
 	self.add_child(timer)
-	timer.start(4.0)
+	timer.start(2.0)
 	await timer.timeout
 	if !Input.is_action_pressed('reset'):
 		return
