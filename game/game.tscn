@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://bets6s7uq5e1r"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_8vr4e"]
 [ext_resource type="PackedScene" path="res://game/key_reader/button_reader.tscn" id="2_75r16"]
@@ -47,7 +47,7 @@ stream = ExtResource("7_efttr")
 position = Vector2(519.5, 433)
 shape = SubResource("RectangleShape2D_s02g2")
 
-[node name="aud_Correct" type="AudioStreamPlayer" parent="."]
+[node name="SndCorrect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_8cnsc")
 
 [connection signal="input_event" from="EnterButton" to="." method="_on_enter_button_input_event"]

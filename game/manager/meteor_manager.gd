@@ -19,7 +19,7 @@ signal send_save
 
 const p_Meteor: PackedScene = preload("res://game/meteor/meteor.tscn")
 const p_Explosion: PackedScene = preload("res://game/meteor/particle_explosion.tscn")
-const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+#const LETTERS: Array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 var current_meteors: Array
 var current_letters: Array
@@ -77,8 +77,8 @@ func move_meteor_to_storage_point(m: Meteor) -> void:
 	#var meteor: Meteor = self.meteors.find_child(m.name)
 	#meteor.move_to_pos($StoragePoint.global_position)
 
-func _get_random_letter() -> String:
-	return self.LETTERS[randi() % LETTERS.size()]
+#func _get_random_letter() -> String:
+#	return self.LETTERS[randi() % LETTERS.size()]
 
 func _clone_selected_meteor(m: Meteor) -> void:
 	# create new meter based on passed in one

@@ -99,11 +99,10 @@ func _submit_word() -> void:
 		return
 	
 	if self.word_manager.check_if_word_is_vaild():
-		# Play positive sound
-		$aud_Correct.play()
-		self.hud.play_score_animation(word_manager.get_running_score())
+		$SndCorrect.play()
+		self.hud.play_score_animation(self.word_manager.get_running_score())
 		self._lower_distance_left(self.word_manager.get_running_score())
-		_update_dis_to_goal_label()
+		self._update_dis_to_goal_label()
 		#####
 		var good_word: WordObject = WordObject.new()
 		good_word.word = word_manager.running_word
@@ -117,7 +116,6 @@ func _submit_word() -> void:
 		
 	
 	self.word_manager.reset_values()
-	self.hud
 
 
 func _update_dis_to_goal_label() -> void:
