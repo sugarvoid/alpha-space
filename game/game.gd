@@ -52,28 +52,10 @@ func _start_game() -> void:
 	self.hud.start_stopwatch()
 
 
-func _input(event) -> void:
-	
-	if event is InputEventKey and event.is_pressed():
-		if event.keycode == 4194309:
-			_submit_word()
-			
-			# start next round
-			
-			
-#		var key_typed = OS.get_keycode_string(event.keycode).to_lower()
-#		# if key_typed is a letter -> then do stuff
-#		if self.word_manager.LETTERS.has(key_typed):
-#			if self.meteor_manager.current_letters.has(key_typed):
-#				print('MATCH!')
-#			else:
-#				print("NOT HERE!")
-#		else:
-#			return
-		# else ignore 
-		# get the meteor that has that letter
-		# then get its slot location 
-		# then we can shoot
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed("exit"):
+		# Add pause screen
+		print('pause')
 
 
 func _connect_signals() -> void:
@@ -107,7 +89,7 @@ func _add_letter_to_bank(m: Meteor) -> void:
 		print('all slots full')
 
 	"""
-	check to see if there is an ioen slot
+	check to see if there is an open slot
 		let meteor_manager know it good
 		add the letter
 	"""
@@ -117,13 +99,10 @@ func _submit_word() -> void:
 		return
 	
 	if self.word_manager.check_if_word_is_vaild():
-		# TODO: Remove me!
-		print(str(word_manager.running_word), ' is a vaild word')
-		# Play positive sound
-		$aud_Correct.play()
-		self.hud.play_score_animation(word_manager.get_running_score())
+		$SndCorrect.play()
+		self.hud.play_score_animation(self.word_manager.get_running_score())
 		self._lower_distance_left(self.word_manager.get_running_score())
-		_update_dis_to_goal_label()
+		self._update_dis_to_goal_label()
 		#####
 		var good_word: WordObject = WordObject.new()
 		good_word.word = word_manager.running_word
@@ -132,14 +111,11 @@ func _submit_word() -> void:
 		#####
 		
 	else:
-		# TODO: Remove me!
-		# take a life????
 		self.hud.disable_mouse_input()
 		print(str(word_manager.running_word), ' is not a vaild word')
 		
 	
 	self.word_manager.reset_values()
-	self.hud
 
 
 func _update_dis_to_goal_label() -> void:
