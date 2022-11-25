@@ -7,9 +7,6 @@ extends Node2D
 const  p_laser: PackedScene = preload("res://game/laser/laser.tscn")
 
 
-func _ready() -> void:
-	pass 
-
 func add_lasers_to_screen(target: Vector2) -> void:
 	var laser_left: Laser = p_laser.instantiate()
 	laser_left.start_pos = target

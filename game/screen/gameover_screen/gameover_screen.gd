@@ -70,7 +70,7 @@ func _float_to_min(seconds: float) -> String:
 	else:
 		result_string += "0" + str(seconds)
 
-	# print the result
+	# output the result to screen
 	return (result_string)
 
 func _go_to_main_menu() -> void:

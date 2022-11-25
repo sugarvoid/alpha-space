@@ -124,7 +124,6 @@ func _update_dis_to_goal_label() -> void:
 
 func _shoot_laser(array_slot: int) -> void:
 	if self.meteor_manager.check_if_slot_has_meteor(array_slot):
-		#### self.hand_sprite.play_press_animation()
 		var targeted_meteor: Meteor 
 		targeted_meteor = self.meteor_manager.current_meteors[array_slot]
 		var target_pos: Vector2 = targeted_meteor.global_position
@@ -156,11 +155,11 @@ func _lower_distance_left(value: int) -> void:
 	print(_distance_to_goal)
 	
 	if self._distance_to_goal == 0:
-		
+		# TODO: If this reaches zero, game won
 		self._game_over()
 		
 	
-	# TODO: If this reaches zero, game won
+	
 
 
 func _on_enter_button_input_event(viewport, event, shape_idx):
