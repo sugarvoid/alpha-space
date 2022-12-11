@@ -1,5 +1,3 @@
-# Creats, track and remove meteors
-
 class_name  MeteorManager
 extends Node2D
 
@@ -25,7 +23,6 @@ var current_meteors: Array
 var current_letters: Array
 var inner_positions: Array
 var outer_positions: Array
-
 var cloned_meteor: Meteor
 
 func add_meteor_to_screen(slot: int) -> void:

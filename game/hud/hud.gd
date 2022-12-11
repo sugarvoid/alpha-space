@@ -12,10 +12,6 @@ func _ready() -> void:
 	$DashStatic.visible = false
 	$SeedInfo/lbl_Name.text = Seeder.seed_name
 
-
-func _process(delta: float) -> void:
-	pass
-
 func disable_mouse_input() -> void:
 	self._block_all_mouse_inputs()
 	$DashStatic.visible = true
@@ -30,7 +26,6 @@ func disable_mouse_input() -> void:
 func update_word_label(word: String) -> void:
 	print('in hud word fuc')
 	_lbl_running_word.text = word
-
 
 func update_distance_left_label(number: int) -> void:
 	_lbl_distance_left.text = str(number)

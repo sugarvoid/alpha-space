@@ -1,5 +1,6 @@
 
 # Alpha Space
+Daily seeds end on Oct 19, 2023
 
 ![](https://github.com/sugarvoid/alpha-space/blob/master/docs/gameplay.gif)
 
