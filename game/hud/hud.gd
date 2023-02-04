@@ -5,27 +5,27 @@ extends CanvasLayer
 @onready var _lbl_distance_left: Label = get_node("Distance/lbl_DistanceLeft")
 @onready var _aniply: AnimationPlayer = get_node("AnimationPlayer")
 @onready var _stopwatch: StopWatch = get_node("StopWatch")
+@onready var _dash_board_static: AnimatedSprite2D = $DashBoardStatic
 
 
 func _ready() -> void:
 	_lbl_running_word.text = ""
-	$DashStatic.visible = false
+	self._dash_board_static.visible = false
 	$SeedInfo/lbl_Name.text = Seeder.seed_name
 
 func disable_mouse_input() -> void:
 	self._block_all_mouse_inputs()
-	$DashStatic.play("default")
-	$DashStatic.visible = true
+	self._dash_board_static.play("default")
+	self._dash_board_static.visible = true
 	var timer: Timer = Timer.new()
 	add_child(timer)
 	timer.start(4.0)
 	await timer.timeout
 	timer.queue_free()
 	self._allow_mouse_inputs()
-	$DashStatic.visible = false
+	self._dash_board_static.visible = false
 
 func update_word_label(word: String) -> void:
-	print('in hud word fuc')
 	_lbl_running_word.text = word
 
 func update_distance_left_label(number: int) -> void:
