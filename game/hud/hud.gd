@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func disable_mouse_input() -> void:
 	self._block_all_mouse_inputs()
+	$DashStatic.play("default")
 	$DashStatic.visible = true
 	var timer: Timer = Timer.new()
 	add_child(timer)

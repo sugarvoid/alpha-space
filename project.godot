@@ -8,100 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Node2D",
-"class": &"BankSlot",
-"language": &"GDScript",
-"path": "res://game/letter_bank/bank_slot.gd"
-}, {
-"base": "Node2D",
-"class": &"Game",
-"language": &"GDScript",
-"path": "res://game/game.gd"
-}, {
-"base": "Node",
-"class": &"GameResetter",
-"language": &"GDScript",
-"path": "res://game/game_resetter/game_resetter.gd"
-}, {
-"base": "CanvasLayer",
-"class": &"HUD",
-"language": &"GDScript",
-"path": "res://game/hud/hud.gd"
-}, {
-"base": "Node2D",
-"class": &"Laser",
-"language": &"GDScript",
-"path": "res://game/laser/laser.gd"
-}, {
-"base": "Node2D",
-"class": &"LaserManager",
-"language": &"GDScript",
-"path": "res://game/manager/laser_manager.gd"
-}, {
-"base": "Node2D",
-"class": &"LetterBank",
-"language": &"GDScript",
-"path": "res://game/letter_bank/letter_bank.gd"
-}, {
-"base": "RefCounted",
-"class": &"LetterMaker",
-"language": &"GDScript",
-"path": "res://game/manager/letter_maker.gd"
-}, {
-"base": "Node2D",
-"class": &"LetterSquare",
-"language": &"GDScript",
-"path": "res://game/letter_bank/letter_square.gd"
-}, {
-"base": "Node2D",
-"class": &"Meteor",
-"language": &"GDScript",
-"path": "res://game/meteor/meteor.gd"
-}, {
-"base": "Node2D",
-"class": &"MeteorManager",
-"language": &"GDScript",
-"path": "res://game/manager/meteor_manager.gd"
-}, {
-"base": "Node2D",
-"class": &"StopWatch",
-"language": &"GDScript",
-"path": "res://game/stop_watch/stop_watch.gd"
-}, {
-"base": "HBoxContainer",
-"class": &"WordLine",
-"language": &"GDScript",
-"path": "res://game/screen/gameover_screen/word_line.gd"
-}, {
-"base": "Object",
-"class": &"WordManager",
-"language": &"GDScript",
-"path": "res://game/manager/word_manager.gd"
-}, {
-"base": "RefCounted",
-"class": &"WordObject",
-"language": &"GDScript",
-"path": "res://game/word_object.gd"
-}]
-_global_script_class_icons={
-"BankSlot": "",
-"Game": "",
-"GameResetter": "",
-"HUD": "",
-"Laser": "",
-"LaserManager": "",
-"LetterBank": "",
-"LetterMaker": "",
-"LetterSquare": "",
-"Meteor": "",
-"MeteorManager": "",
-"StopWatch": "",
-"WordLine": "",
-"WordManager": "",
-"WordObject": ""
-}
-
 [application]
 
 config/name="Alpha Space"
@@ -124,57 +30,57 @@ window/stretch/mode="viewport"
 
 num_pad_seven={
 "deadzone": 0.5,
-"events": [null, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194445,"unicode":0,"echo":false,"script":null)
+"events": [null, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194445,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_eight={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194446,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194446,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_nine={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194447,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194447,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_four={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194442,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194442,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_five={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194443,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194443,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_six={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194444,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194444,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_one={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194439,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194439,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_two={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194440,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194440,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 num_pad_three={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194441,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194441,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 reset={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 exit={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 

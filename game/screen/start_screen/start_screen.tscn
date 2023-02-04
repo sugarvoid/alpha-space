@@ -50,6 +50,7 @@ grow_vertical = 2
 script = ExtResource("1_ustq1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_jfhku")
@@ -62,6 +63,7 @@ stream = ExtResource("2_g8xkf")
 volume_db = -16.944
 
 [node name="btn_Start" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 336.0
 offset_top = 256.0
 offset_right = 704.0
@@ -71,6 +73,7 @@ texture_pressed = SubResource("AtlasTexture_pq6hu")
 texture_hover = SubResource("AtlasTexture_c27ci")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 174.0
 offset_top = 54.0
 offset_right = 854.0
@@ -80,6 +83,7 @@ theme_override_font_sizes/font_size = 128
 text = "ALPHA SPACE"
 
 [node name="lbl_Version" type="Label" parent="."]
+layout_mode = 0
 offset_left = 916.0
 offset_top = 2.0
 offset_right = 1025.0
@@ -87,6 +91,7 @@ offset_bottom = 59.0
 text = "0.1.0"
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 280.0
 offset_right = 627.0
@@ -94,6 +99,7 @@ offset_bottom = 334.0
 text = "PLAY"
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 425.0
 offset_top = 404.0
 offset_right = 620.0
@@ -101,6 +107,7 @@ offset_bottom = 458.0
 text = "DAILY RUN"
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 432.0
 offset_right = 280.0
@@ -114,12 +121,14 @@ libraries = {
 }
 
 [node name="txt_Seed" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 464.0
 offset_right = 279.0
 offset_bottom = 507.0
 
 [node name="btn_DailyRun" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 336.0
 offset_top = 376.0
 offset_right = 704.0
