@@ -28,17 +28,35 @@ region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1dkwg"]
 animations = [{
-"frames": [SubResource("AtlasTexture_20cgk"), SubResource("AtlasTexture_uk5xu")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20cgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk5xu")
+}],
 "loop": true,
 "name": &"blue",
 "speed": 3.0
 }, {
-"frames": [SubResource("AtlasTexture_8un5q"), SubResource("AtlasTexture_gffyr")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8un5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gffyr")
+}],
 "loop": true,
 "name": &"red",
 "speed": 3.0
 }, {
-"frames": [SubResource("AtlasTexture_k1yq8"), SubResource("AtlasTexture_njud5")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1yq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njud5")
+}],
 "loop": true,
 "name": &"white",
 "speed": 3.0
@@ -47,6 +65,5 @@ animations = [{
 [node name="Reticle" type="Node2D"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_1dkwg")
+sprite_frames = SubResource("SpriteFrames_1dkwg")
 animation = &"white"
-playing = true

@@ -44,51 +44,33 @@ offset_bottom = 523.0
 
 [node name="Label" type="Label" parent="Results"]
 layout_mode = 2
-offset_right = 201.0
-offset_bottom = 26.0
 text = "Results"
 horizontal_alignment = 1
 
 [node name="Seed" type="HBoxContainer" parent="Results"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 201.0
-offset_bottom = 56.0
 
 [node name="static_" type="Label" parent="Results/Seed"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-offset_right = 60.0
-offset_bottom = 26.0
 text = "Seed"
 
 [node name="lbl_seed_name" type="Label" parent="Results/Seed"]
 layout_mode = 2
-offset_left = 64.0
-offset_right = 201.0
-offset_bottom = 26.0
 size_flags_horizontal = 3
 text = "dfsdfdsf"
 horizontal_alignment = 1
 
 [node name="Time" type="HBoxContainer" parent="Results"]
 layout_mode = 2
-offset_top = 60.0
-offset_right = 201.0
-offset_bottom = 86.0
 
 [node name="static_" type="Label" parent="Results/Time"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-offset_right = 60.0
-offset_bottom = 26.0
 text = "Time"
 
 [node name="lbl_time" type="Label" parent="Results/Time"]
 layout_mode = 2
-offset_left = 64.0
-offset_right = 201.0
-offset_bottom = 26.0
 size_flags_horizontal = 3
 text = "00:00"
 horizontal_alignment = 1
@@ -103,22 +85,16 @@ metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-offset_right = 161.0
-offset_bottom = 26.0
 text = "Words Used"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WordListScroll" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
-offset_top = 30.0
-offset_right = 161.0
-offset_bottom = 170.0
 size_flags_vertical = 3
 
 [node name="WordList" type="VBoxContainer" parent="VBoxContainer/WordListScroll"]
 layout_mode = 2
-offset_right = 161.0
 size_flags_horizontal = 3
 
 [node name="btn_MainMenu" type="Button" parent="."]
