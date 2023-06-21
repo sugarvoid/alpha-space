@@ -1667,6 +1667,5 @@ func get_daily_seed() -> String:
 	return seed 
 
 func get_random_seed() -> String:
-	var seed: String
 	randomize()
 	return self.random_seeds[randi() % random_seeds.size()]
