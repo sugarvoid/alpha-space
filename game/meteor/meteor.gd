@@ -30,8 +30,9 @@ var storage_point: Vector2
 
 
 func _ready() -> void:
-	self._update_label()
+	
 	if !self.is_clone:
+		self._update_label()
 		self.global_position = self.start_pos
 		self.sprite.scale = self.STARTING_SCALE
 		self.rotate_speed = self._get_ran_rotation_speed()

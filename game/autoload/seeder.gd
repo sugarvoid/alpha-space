@@ -1660,11 +1660,11 @@ func _make_seed() -> void:
 	
 
 func get_daily_seed() -> String:
-	var seed: String
+	var ran_seed: String
 	for s in daily_seeds:
 		if(s["Date"] == _get_today_string()):
-			seed = s["Seed"]
-	return seed 
+			ran_seed = s["Seed"]
+	return ran_seed 
 
 func get_random_seed() -> String:
 	randomize()
