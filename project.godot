@@ -24,6 +24,7 @@ PlayerData="*res://game/autoload/player_data.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=600
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]
@@ -87,4 +88,4 @@ exit={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

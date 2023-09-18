@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/pizza_cursor.png-49f6c0d75fb46629779e5c7d80f0
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
