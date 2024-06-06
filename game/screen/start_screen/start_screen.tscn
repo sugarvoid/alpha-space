@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://coq7rqwpbf6rs"]
+[gd_scene load_steps=13 format=3 uid="uid://coq7rqwpbf6rs"]
 
 [ext_resource type="Texture2D" uid="uid://bpfa7asdpbk24" path="res://game/screen/start_screen/start_screen.png" id="1_jfhku"]
 [ext_resource type="Script" path="res://game/screen/start_screen/start_screen.gd" id="1_ustq1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3wnrigknxqlh" path="res://game/screen/start_screen/planet.tscn" id="3_pfhkv"]
 [ext_resource type="Texture2D" uid="uid://c84l2uxluigab" path="res://game/screen/start_screen/tmp_button.png" id="4_d2ori"]
 [ext_resource type="FontFile" uid="uid://c5d8fl5dxbsla" path="res://game/font/ThaleahFat.ttf" id="4_flwk7"]
+[ext_resource type="FontFile" uid="uid://c701rmv1hbnfl" path="res://game/font/RaccoonSerif-Bold.ttf" id="7_qx2ow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asrrk"]
 atlas = ExtResource("4_d2ori")
@@ -66,11 +67,20 @@ volume_db = -16.944
 layout_mode = 0
 offset_left = 336.0
 offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 402.0
+offset_right = 595.0
+offset_bottom = 336.0
 texture_normal = SubResource("AtlasTexture_asrrk")
 texture_pressed = SubResource("AtlasTexture_pq6hu")
 texture_hover = SubResource("AtlasTexture_c27ci")
+
+[node name="Label2" type="Label" parent="btn_Start"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 24.0
+offset_right = 175.0
+offset_bottom = 53.0
+text = "PLAY"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -89,22 +99,6 @@ offset_top = 2.0
 offset_right = 1025.0
 offset_bottom = 59.0
 text = "0.1.0"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 280.0
-offset_right = 627.0
-offset_bottom = 334.0
-text = "PLAY"
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 425.0
-offset_top = 404.0
-offset_right = 620.0
-offset_bottom = 458.0
-text = "DAILY RUN"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
@@ -131,11 +125,70 @@ offset_bottom = 507.0
 layout_mode = 0
 offset_left = 336.0
 offset_top = 376.0
-offset_right = 704.0
-offset_bottom = 522.0
+offset_right = 592.0
+offset_bottom = 458.0
 texture_normal = SubResource("AtlasTexture_asrrk")
 texture_pressed = SubResource("AtlasTexture_pq6hu")
 texture_hover = SubResource("AtlasTexture_c27ci")
+
+[node name="Label4" type="Label" parent="btn_DailyRun"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 28.0
+offset_right = 177.0
+offset_bottom = 56.0
+text = "DAILY RUN"
+
+[node name="btn_HowToPlay" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 482.0
+offset_right = 592.0
+offset_bottom = 564.0
+texture_normal = SubResource("AtlasTexture_asrrk")
+texture_pressed = SubResource("AtlasTexture_pq6hu")
+texture_hover = SubResource("AtlasTexture_c27ci")
+
+[node name="Label5" type="Label" parent="btn_HowToPlay"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 25.0
+offset_right = 209.0
+offset_bottom = 53.0
+text = "HELP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="HelpScreen"]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+texture = ExtResource("1_jfhku")
+
+[node name="Label" type="Label" parent="HelpScreen"]
+layout_mode = 0
+offset_right = 432.0
+offset_bottom = 307.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpScreen"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 56.0
+offset_right = 906.0
+offset_bottom = 493.0
+theme_override_fonts/normal_font = ExtResource("7_qx2ow")
+theme_override_font_sizes/normal_font_size = 42
+text = "How to Play
+
+
+Use letters to make words
+Left mouse to use letter
+Right mouse to store a letter"
 
 [connection signal="pressed" from="btn_Start" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="btn_DailyRun" to="." method="_on_btn_daily_run_pressed"]
