@@ -21,6 +21,3 @@ var banked_letters: Array[String]
 #			emit_signal("on_valid_store", letter)
 #			return
 			
-
-
-

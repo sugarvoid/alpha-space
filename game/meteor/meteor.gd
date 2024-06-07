@@ -32,13 +32,14 @@ var storage_point: Vector2
 func _ready() -> void:
 	
 	if !self.is_clone:
-		self._update_label()
+		self.hide()
 		self.global_position = self.start_pos
 		self.sprite.scale = self.STARTING_SCALE
+		$Control.scale = self.sprite.scale
 		self.rotate_speed = self._get_ran_rotation_speed()
+		self._update_label()
 		self._move_to_end_pos()
 		self._increase_scale_to_one()
-	
 
 
 func _process(delta: float) -> void:
@@ -72,8 +73,10 @@ func drop_area2d() -> void:
 	self.remove_child(self.area_2d)
 
 func _increase_scale_to_one() -> void:
+	
 	var tween2: Tween = create_tween()
 	tween2.tween_property(self.sprite, "scale", Vector2(1,1), self.movement_tween_time)
+	self.show()
 	await  tween2.finished
 	self.is_hoverable = true
 	self.is_clickable = true

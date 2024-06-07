@@ -190,5 +190,28 @@ Use letters to make words
 Left mouse to use letter
 Right mouse to store a letter"
 
+[node name="btn_Back" type="TextureButton" parent="HelpScreen"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 516.0
+offset_right = 298.0
+offset_bottom = 598.0
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_asrrk")
+texture_pressed = SubResource("AtlasTexture_pq6hu")
+texture_hover = SubResource("AtlasTexture_c27ci")
+
+[node name="Label5" type="Label" parent="HelpScreen/btn_Back"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 25.0
+offset_right = 209.0
+offset_bottom = 53.0
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="btn_Start" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="btn_DailyRun" to="." method="_on_btn_daily_run_pressed"]
+[connection signal="pressed" from="btn_HowToPlay" to="." method="_on_btn_how_to_play_pressed"]
+[connection signal="pressed" from="HelpScreen/btn_Back" to="." method="_on_btn_back_pressed"]

@@ -49,5 +49,3 @@ func set_up_letter_array() -> void:
 	add_letter_to_list('v', 6)
 	add_letter_to_list('x', 6)
 	add_letter_to_list('q', 6)
-
-

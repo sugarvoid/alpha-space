@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	$AnimationPlayer.play("fade_in_music")
+	$HelpScreen.hide()
 	#$AudioStreamPlayer.play()
 
 func _on_btn_start_pressed() -> void:
@@ -20,3 +21,11 @@ func _on_btn_daily_run_pressed() -> void:
 	$txt_Seed.text = Seeder.get_daily_seed()
 	Seeder.set_seed($txt_Seed.text)
 	_start_game()
+
+
+func _on_btn_how_to_play_pressed() -> void:
+	$HelpScreen.show()
+
+
+func _on_btn_back_pressed() -> void:
+	$HelpScreen.hide()
